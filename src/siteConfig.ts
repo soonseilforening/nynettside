@@ -292,28 +292,103 @@ export const courses: CourseItem[] = [
   },
 ];
 
-export type VenueInfo = {
-  title: string;
-  description: string;
-  capacity: string;
-  features: string[];
+export type VenuePriceRow = {
+  label: string;
   price: string;
-  example?: boolean;
+};
+
+export type VenueGalleryImage = {
+  src: string;
+  alt: string;
+};
+
+export type VenueInfo = {
+  name: string;
+  intro: string[];
+  aboutParagraphs: string[];
+  capacity: string[];
+  equipment: string[];
+  tableware: string[];
+  kitchenInfo: string;
+  ageLimit: string;
+  priceRows: VenuePriceRow[];
+  priceNote: string;
+  memberDiscount: string;
+  timing: string;
+  reservation2027: string;
+  contactEmail: string;
+  galleryImages: VenueGalleryImage[];
+  heroImage: string;
 };
 
 export const venueInfo: VenueInfo = {
-  title: 'Lei klubbhuset Neptun i Son',
-  description:
-    'Soon Seilforenings klubbhus Neptun ligger idyllisk til ved havna i Son, med utsikt over Oslofjorden. Klubbhuset passer for kurs, selskap, møter og arrangementer.',
-  capacity: '[EKSEMPEL – må fylles inn]',
-  features: [
-    '[EKSEMPEL – må fylles inn] Fasilitet',
-    '[EKSEMPEL – må fylles inn] Fasilitet',
-    '[EKSEMPEL – må fylles inn] Fasilitet',
-    '[EKSEMPEL – må fylles inn] Fasilitet',
+  name: 'Neptun',
+  intro: [
+    'Vårt lokale Neptun leies ut til selskaper, møter og konferanser. Foreningen bruker lokalet selv et par helger i året, men ellers er det tilgjengelig for utleie. Det store og åpne lokalet ble totalrenovert i januar 2021 og ligger på bryggen med flott utsikt utover havnen.',
+    'Hos oss kan du tilberede mat og ha med egen drikke.',
+    'Et stort og moderne kjøkken hører til lokalet og ble pusset opp i 2020. Se vår bookingkalender om din ønskede dato er ledig, og send oss en forespørsel via skjemaet nedenfor.',
+    'Kontoret er kun bemannet én dag per uke. Det kan derfor ta noen dager før din forespørsel blir besvart.',
   ],
-  price: '[EKSEMPEL – må fylles inn]',
-  example: true,
+  aboutParagraphs: [
+    'Selskapslokalet Neptun består av et stort rom som kan deles av med skillevegg. Det er et tilhørende stort, lyst og moderne kjøkken med egen inngang fra festlokalet og med serveringsluke i veggen mellom rommene.',
+    'Lokalet egner seg godt til selskaper og store begivenheter som dåp, konfirmasjon eller bryllup. Det er også godt egnet til møter og konferanser.',
+    'Selskapslokalet ligger i andre etasje i huset og har egen veranda ut mot bryggen med fantastisk utsikt over fjorden.',
+    'Det er direkte tilgang til lokalet fra bakkeplan. Lokalet er universelt utformet og har HC-toalett.',
+  ],
+  capacity: [
+    'Maks 80 personer (pga. plass)',
+    'Kinooppsett: 90 personer',
+  ],
+  equipment: [
+    '19 bord, 75 x 122 cm',
+    '80 konferansestoler',
+    'Projektor',
+    'Lerret',
+    'Lydanlegg',
+    'Dimbar belysning med tre ulike fargetoner',
+  ],
+  tableware: [
+    'Små tallerkener',
+    'Store middagstallerkener',
+    'Dype skåler',
+    'Vannglass',
+    'Champagneglass',
+    'Hvitvinsglass',
+    'Rødvinsglass',
+    'Bestikk',
+  ],
+  kitchenInfo:
+    'Kjøkkenet er utstyrt med en stekeovn med induksjonsplate og en industrioppvaskmaskin med bakker. Det finnes diverse kjøkkenutstyr som kjeler, sleiver, former, serveringsfat og serveringsbestikk.',
+  ageLimit:
+    'Vi leier ikke ut til grupper der alderen på deltakerne generelt er under 25 år (unntatt barnedåp og konfirmasjoner).',
+  priceRows: [
+    { label: 'Mandag–torsdag', price: '5 800 kr' },
+    { label: 'Mandag–torsdag, halv dag uten kjøkken', price: '3 900 kr' },
+    { label: 'Helg, én dag', price: '8 400 kr' },
+    { label: 'Helg, to dager', price: '11 000 kr' },
+    { label: 'Helg, tre dager', price: '13 600 kr' },
+  ],
+  priceNote: 'Alle priser er inkludert utvask.',
+  memberDiscount:
+    'Medlemmer av Soon Seilforening har 1 000 kr i rabatt ved leie til privat arrangement (selskap, konfirmasjon osv.).',
+  timing:
+    'Leietaker har tilgang til lokalet fra klokken 11:00 den dagen de skal leie og frem til klokken 09:00 neste dag, om ikke annet er avtalt. Det er ikke tillatt å oppholde seg i lokalet mellom klokken 02:00 og 06:00.',
+  reservation2027:
+    'For datoer i 2027 åpner vi for booking i desember 2026, etter at foreningens egne arrangementer i 2027 er fastsatt. Alle forespørsler som kommer innen desember, blir satt på venteliste, og det vil bli gitt beskjed i desember om lokalet er ledig på ønsket dato.',
+  contactEmail: 'kontoret@soonsf.no',
+  heroImage: '/bilder/utleielokale/utleielokale-neptun-04.jpg',
+  galleryImages: [
+    { src: '/bilder/utleielokale/utleielokale-neptun-01.jpg', alt: 'Langbord dekket til selskap, med oransje tulipaner i forgrunnen' },
+    { src: '/bilder/utleielokale/utleielokale-neptun-02.jpg', alt: 'Lokalet med enkeltbord og lerret, møteoppsett' },
+    { src: '/bilder/utleielokale/utleielokale-neptun-03.jpg', alt: 'Stoler i rader foran lerretet, kinooppsett' },
+    { src: '/bilder/utleielokale/utleielokale-neptun-04.jpg', alt: 'Hesteskobord dekket til middag' },
+    { src: '/bilder/utleielokale/utleielokale-neptun-05.jpg', alt: 'Langt, dekket bord med blomster og stearinlys' },
+    { src: '/bilder/utleielokale/utleielokale-neptun-06.jpg', alt: 'Nærbilde av vinglass og tallerken med Soon Seilforening-logo' },
+    { src: '/bilder/utleielokale/utleielokale-neptun-07.jpg', alt: 'Kollasje av kjøkkenet: komfyr, oppvaskbenk og kjøkkenbenk' },
+    { src: '/bilder/utleielokale/utleielokale-neptun-08.jpg', alt: 'Skipsklokke på veggen i lokalet' },
+    { src: '/bilder/utleielokale/utleielokale-neptun-09.jpg', alt: 'Verandaen mot havnen i solnedgang' },
+    { src: '/bilder/utleielokale/utleielokale-neptun-10.jpg', alt: 'Lokalet pyntet til bryllup eller stort selskap' },
+  ],
 };
 
 export type GuestBerthInfo = {
