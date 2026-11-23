@@ -10,6 +10,7 @@ import MembershipPage from '@/pages/MembershipPage';
 import NewsPage from '@/pages/NewsPage';
 import AboutPage from '@/pages/AboutPage';
 import GroupPage from '@/pages/GroupPage';
+import BoardPage from '@/pages/BoardPage';
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
             <Route path="/medlemskap" element={<MembershipPage />} />
             <Route path="/nyheter" element={<NewsPage />} />
             <Route path="/om-oss" element={<AboutPage />} />
+            <Route path="/om-oss/styret" element={<BoardPage />} />
             <Route path="/om-oss/:groupSlug" element={<GroupPage />} />
           </Routes>
         </main>

@@ -98,6 +98,24 @@ export default function AboutPage() {
               <ul className="mt-6 space-y-4">
                 <li className="flex items-start gap-3">
                   <span className="inline-flex h-9 w-9 items-center justify-center rounded-lg bg-[#0C1C8C] text-white">
+                    <Users className="h-4 w-4" />
+                  </span>
+                  <div>
+                    <dt className="text-xs uppercase tracking-wider text-slate-400 font-500">
+                      Styret og kontoret
+                    </dt>
+                    <dd className="mt-0.5">
+                      <Link
+                        to="/om-oss/styret"
+                        className="text-sm font-600 text-[#0C1C8C] hover:underline"
+                      >
+                        Se styret og kontormedarbeider
+                      </Link>
+                    </dd>
+                  </div>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="inline-flex h-9 w-9 items-center justify-center rounded-lg bg-[#0C1C8C] text-white">
                     <Mail className="h-4 w-4" />
                   </span>
                   <div>

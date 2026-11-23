@@ -41,6 +41,7 @@ export const navLinks: NavLink[] = [
     label: 'Om oss',
     path: '/om-oss',
     children: [
+      { label: 'Styret og kontoret', path: '/om-oss/styret' },
       { label: 'Jolle', path: '/om-oss/jolle' },
       { label: 'Kjølbåt-Sport', path: '/om-oss/kjolbat-sport' },
       { label: 'Ladies Sailing', path: '/om-oss/ladies-sailing' },
@@ -132,6 +133,30 @@ export const groups: GroupInfo[] = [
     contactEmail: '[EKSEMPEL – må fylles inn] E-postadresse',
     example: true,
   },
+];
+
+export type BoardMember = {
+  role: string;
+  name: string;
+  email: string;
+  image: string;
+};
+
+export const boardIntro =
+  'Soon Seilforening drives av et frivillig styre som dekker foreningens virkeområder og den daglige driften. I tillegg har foreningen en fast ansatt kontormedarbeider i deltidsstilling, som har plass på kontoret på Neptun.';
+
+export const boardMembers: BoardMember[] = [
+  { role: 'Styreleder', name: 'Lars Even Nilssen', email: 'leder@soonsf.no', image: '/bilder/styret/styreleder.jpg' },
+  { role: 'Nestleder', name: 'Ola Sillerud', email: 'nestleder@soonsf.no', image: '/bilder/styret/nestleder.jpg' },
+  { role: 'Styremedlem – Bygning', name: 'Dan Richard Isdahl-Engh', email: 'bygning@soonsf.no', image: '/bilder/styret/styremedlem-hus.jpg' },
+  { role: 'Styremedlem – Brygge', name: 'Torgeir Moringen', email: 'brygge@soonsf.no', image: '/bilder/styret/styremedlem-brygge.jpg' },
+  { role: 'Styremedlem – Materiell', name: 'Are Nodland', email: 'materiell@soonsf.no', image: '/bilder/styret/styremedlem-materiell.jpg' },
+  { role: 'Styremedlem – Sportsbåt', name: 'Jonas Alexander Sørlie', email: 'sport@soonsf.no', image: '/bilder/styret/styremedlem-sportsbat.jpg' },
+  { role: 'Styremedlem – Kjølbåt', name: 'Mads Francke', email: 'kjolbaat@soonsf.no', image: '/bilder/styret/styremedlem-kjolbat.jpg' },
+  { role: 'Styremedlem – Ladies Sailing', name: 'Janne Frich Aschjem', email: 'ladies@soonsf.no', image: '/bilder/styret/styremedlem-ladies-sailing.jpg' },
+  { role: 'Styremedlem – Økonomi', name: 'Jan Fredrik Håvie', email: 'okonomi@soonsf.no', image: '/bilder/styret/styremedlem-okonomi.jpg' },
+  { role: 'Styremedlem', name: 'Siv Marie Stornes', email: 'styremedlem1@soonsf.no', image: '/bilder/styret/styremedlem.jpg' },
+  { role: 'Kontormedarbeider', name: 'Ketil Haugland', email: 'kontoret@soonsf.no', image: '/bilder/styret/kontormedarbeider.jpg' },
 ];
 
 export type SailingEvent = {
