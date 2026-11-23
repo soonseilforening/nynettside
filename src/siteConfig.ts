@@ -51,6 +51,12 @@ export const navLinks: NavLink[] = [
   },
 ];
 
+export type GroupContact = {
+  role: string;
+  name: string;
+  email: string;
+};
+
 export type GroupInfo = {
   slug: string;
   name: string;
@@ -61,6 +67,11 @@ export type GroupInfo = {
   location: string;
   contactName: string;
   contactEmail: string;
+  contacts?: GroupContact[];
+  sportsboatText?: string;
+  sportsboatExample?: boolean;
+  moreInfoText?: string;
+  moreInfoFacebookUrl?: string;
   example?: boolean;
 };
 
@@ -81,15 +92,26 @@ export const groups: GroupInfo[] = [
   {
     slug: 'kjolbat-sport',
     name: 'Kjølbåt-Sport',
-    shortDescription: '[EKSEMPEL – må fylles inn] Kort beskrivelse av kjølbåt-sportgruppen.',
+    shortDescription:
+      'Onsdagsregattaer vår og høst, medlemsmøter i vinterhalvåret og turer med et sosialt tilsnitt.',
     description:
-      '[EKSEMPEL – må fylles inn] Beskrivelse av kjølbåt-sportgruppen, hva man driver med, hvilke båttyper som brukes og nivå på seilerne.',
-    targetGroup: '[EKSEMPEL – må fylles inn] Hvem gruppen passer for (alder, nivå).',
-    schedule: '[EKSEMPEL – må fylles inn] Når gruppen møtes (ukedag, tidspunkt, sesong).',
-    location: '[EKSEMPEL – må fylles inn] Hvor gruppen møtes (klubbhus, brygge, område).',
-    contactName: '[EKSEMPEL – må fylles inn] Navn på kontaktperson',
-    contactEmail: '[EKSEMPEL – må fylles inn] E-postadresse',
-    example: true,
+      'Kjølbåtgruppen arrangerer onsdagsregattaer vår og høst, medlemsmøter i vinterhalvåret og turer med et sosialt tilsnitt.',
+    targetGroup:
+      'Har du som voksen lyst til å lære deg å seile, er det alltid plass som mannskap under onsdagsregattaen.',
+    schedule:
+      'Møt opp på brygga til seilforeningen en onsdag klokken 17:30, så får du plass om bord i en av båtene og en praktisk innføring i seiling.',
+    location: 'Brygga til Soon Seilforening, Son',
+    contactName: 'Mads Francke',
+    contactEmail: 'kjolbaat@soonsf.no',
+    contacts: [
+      { role: 'Leder, kjølbåt', name: 'Mads Francke', email: 'kjolbaat@soonsf.no' },
+      { role: 'Styremedlem, sportsbåt', name: 'Jonas Alexander Sørlie', email: 'sport@soonsf.no' },
+    ],
+    sportsboatText: '[EKSEMPEL – må fylles inn av gruppeleder for sportsbåt]',
+    sportsboatExample: true,
+    moreInfoText:
+      'Kjølbåtgruppen legger fortløpende ut informasjon om aktiviteter og resultatlister fra onsdagsregattaen på foreningens Facebook-side.',
+    moreInfoFacebookUrl: externalLinks.facebook,
   },
   {
     slug: 'ladies-sailing',
