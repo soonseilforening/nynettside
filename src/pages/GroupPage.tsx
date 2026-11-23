@@ -1,5 +1,5 @@
 import { useParams, Link } from 'react-router-dom';
-import { Users, CalendarDays, MapPin, Mail, ArrowLeft, AlertCircle, Facebook, ExternalLink } from 'lucide-react';
+import { Users, CalendarDays, MapPin, Mail, ArrowLeft, AlertCircle } from 'lucide-react';
 import PageHeader from '@/components/PageHeader';
 import { groups } from '@/siteConfig';
 
@@ -30,9 +30,6 @@ export default function GroupPage() {
       </>
     );
   }
-
-  const hasFacebookPlaceholder =
-    group.moreInfoFacebookUrl === 'https://www.facebook.com/';
 
   return (
     <>
@@ -122,32 +119,6 @@ export default function GroupPage() {
                 </div>
               )}
             </div>
-
-            {/* More info / Facebook */}
-            {group.moreInfoText && (
-              <div className="rounded-2xl border border-slate-200 bg-slate-50 p-5 sm:p-6">
-                <h3 className="font-display text-base font-700 text-slate-900">Mer informasjon</h3>
-                <p className="mt-2 text-sm text-slate-600 leading-relaxed">{group.moreInfoText}</p>
-                {group.moreInfoFacebookUrl && (
-                  <a
-                    href={group.moreInfoFacebookUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className={
-                      hasFacebookPlaceholder
-                        ? 'mt-4 inline-flex items-center gap-2 rounded-xl bg-amber-100 border border-amber-300 px-4 py-2.5 text-sm font-600 text-amber-800'
-                        : 'mt-4 inline-flex items-center gap-2 rounded-xl bg-[#1877F2] px-4 py-2.5 text-sm font-600 text-white hover:bg-[#1877F2]/90 transition-colors'
-                    }
-                  >
-                    <Facebook className="h-4 w-4" />
-                    {hasFacebookPlaceholder
-                      ? '[EKSEMPEL – må fylles inn] Facebook-lenke'
-                      : 'Besøk Facebook-siden vår'}
-                    <ExternalLink className="h-3.5 w-3.5" />
-                  </a>
-                )}
-              </div>
-            )}
 
             {/* Back link */}
             <div>

@@ -18,8 +18,6 @@ export const externalLinks = {
   manage2sail: 'https://www.manage2sail.com/',
   weatherWindy: 'https://www.windy.com/?59.221,10.684,8',
   weatherYr: 'https://www.yr.no/nb/v%C3%A6rvarsel/grafikk/1-9205/Son',
-  facebook: 'https://www.facebook.com/',
-  instagram: 'https://www.instagram.com/',
 };
 
 export type NavLink = {
@@ -70,8 +68,6 @@ export type GroupInfo = {
   contacts?: GroupContact[];
   sportsboatText?: string;
   sportsboatExample?: boolean;
-  moreInfoText?: string;
-  moreInfoFacebookUrl?: string;
   example?: boolean;
 };
 
@@ -109,9 +105,6 @@ export const groups: GroupInfo[] = [
     ],
     sportsboatText: '[EKSEMPEL – må fylles inn av gruppeleder for sportsbåt]',
     sportsboatExample: true,
-    moreInfoText:
-      'Kjølbåtgruppen legger fortløpende ut informasjon om aktiviteter og resultatlister fra onsdagsregattaen på foreningens Facebook-side.',
-    moreInfoFacebookUrl: externalLinks.facebook,
   },
   {
     slug: 'ladies-sailing',

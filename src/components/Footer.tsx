@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { MapPin, Mail, Anchor, Facebook, Instagram, ArrowUpRight } from 'lucide-react';
+import { MapPin, Mail, Anchor, ArrowUpRight } from 'lucide-react';
 import { externalLinks, navLinks, siteConfig } from '@/siteConfig';
 
 const aboutLinks = [
@@ -92,34 +92,14 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Social + CTA */}
+          {/* CTA */}
           <div>
             <h3 className="font-display text-sm font-600 uppercase tracking-[0.16em] text-white">
-              Følg oss
+              Bli medlem
             </h3>
             <p className="mt-4 text-sm text-white/70">
-              Få med deg seilaser, resultater og bilder fra havna.
+              Soon Seilforening er for alle – fra jolle til kjølbåt, fra nybegynner til regattaseiler.
             </p>
-            <div className="mt-4 flex gap-3">
-              <a
-                href={externalLinks.facebook}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Facebook"
-                className="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-white/10 text-white hover:bg-white/20 transition-all duration-200"
-              >
-                <Facebook className="h-5 w-5" />
-              </a>
-              <a
-                href={externalLinks.instagram}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Instagram"
-                className="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-white/10 text-white hover:bg-white/20 transition-all duration-200"
-              >
-                <Instagram className="h-5 w-5" />
-              </a>
-            </div>
             <Link
               to="/medlemskap"
               className="mt-5 inline-flex items-center justify-center gap-2 rounded-xl bg-white px-5 py-2.5 text-sm font-600 text-[#0C1C8C] hover:bg-white/90 transition-colors"
