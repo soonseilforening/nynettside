@@ -1,6 +1,14 @@
 // Central place for external links and content data.
 // Swap these URLs for the real Manage2Sail / Rubic links when ready.
 
+export const siteConfig = {
+  name: 'Soon Seilforening',
+  shortName: 'Soon SF',
+  email: 'kontoret@soonsf.no',
+  address: 'Storgata 29B, 1555 Son',
+  profileColor: '#0C1C8C',
+};
+
 export const externalLinks = {
   rubicLogin: 'https://rubic.no/',
   rubicMembership: 'https://rubic.no/',
@@ -13,11 +21,13 @@ export const externalLinks = {
 };
 
 export const navLinks = [
-  { label: 'Hjem', href: '#hjem' },
-  { label: 'Aktiviteter', href: '#aktiviteter' },
-  { label: 'Regatta', href: '#regatta' },
-  { label: 'Medlemsskap', href: '#medlemsportal' },
-  { label: 'Om oss', href: '#om-oss' },
+  { label: 'Hjem', path: '/' },
+  { label: 'Aktiviteter', path: '/aktiviteter' },
+  { label: 'Seilkurs', path: '/seilkurs' },
+  { label: 'Utleie av lokalet', path: '/utleie' },
+  { label: 'Gjestebrygge', path: '/gjestebrygge' },
+  { label: 'Nyheter', path: '/nyheter' },
+  { label: 'Om oss / Kontakt', path: '/om-oss' },
 ];
 
 export type SailingEvent = {
@@ -121,7 +131,7 @@ export const quickLinks: QuickLink[] = [
     label: 'Havneutleie',
     description: 'Bestill gjesteplass eller bok båtplass for sesongen.',
     icon: 'Anchor',
-    href: '#medlemsportal',
+    href: '/gjestebrygge',
   },
   {
     id: 'vaktlister',
@@ -135,6 +145,94 @@ export const quickLinks: QuickLink[] = [
     label: 'Dokumentarkiv',
     description: 'Vedtekter, retningslinjer, regler og årsrapporter.',
     icon: 'FolderArchive',
-    href: '#medlemsportal',
+    href: '/om-oss',
   },
 ];
+
+export type CourseItem = {
+  id: string;
+  title: string;
+  level: string;
+  description: string;
+  duration: string;
+  price: string;
+};
+
+export const courses: CourseItem[] = [
+  {
+    id: 'optimist-nybegynner',
+    title: 'Optimist – nybegynner',
+    level: 'Barn 8–12 år',
+    description: 'En trygg og morsom introduksjon til seiling for de yngste. Vi lærer grunnlegende teknikk, balanse og sikkerhet på vannet.',
+    duration: '5 dager (mandag–fredag)',
+    price: '1 500 kr',
+  },
+  {
+    id: 'jolle-viderekommen',
+    title: 'Jolle – viderekommen',
+    level: 'Ungdom og voksne',
+    description: 'For deg som har litt erfaring og vil bli sikrere i båten. Vender, kryss, slør og spinnaker introduseres.',
+    duration: 'Helgekurs (lørdag–søndag)',
+    price: '1 200 kr',
+  },
+  {
+    id: 'kjølbåt-kurs',
+    title: 'Kjølbåt – grunnkurs',
+    level: 'Voksne',
+    description: 'Lær å føre kjølbåt med manøvrering, seiltrim, navigasjon og havnegangs. Gir godt grunnlag for kystseiling.',
+    duration: '3 kvelder + helg',
+    price: '2 000 kr',
+  },
+  {
+    id: 'sikkerhet-vann',
+    title: 'Sikkerhet på vannet',
+    level: 'Alle aldre',
+    description: 'Praktisk sikkerhetskurs: redningsvest, mann over bord, bruk av VHF og førstehjelp. Obligatorisk for vakter.',
+    duration: '1 dag',
+    price: '600 kr',
+  },
+];
+
+export type VenueInfo = {
+  title: string;
+  description: string;
+  capacity: string;
+  features: string[];
+  price: string;
+};
+
+export const venueInfo: VenueInfo = {
+  title: 'Lei klubbhuset i Son',
+  description:
+    'Soon Seilforenings klubbhus ligger idyllisk til ved havna i Son, med utsikt over Oslofjorden. Klubbhuset passer perfekt for kurs, selskap, møter og arrangementer – opptil 60 personer.',
+  capacity: 'Opptil 60 personer',
+  features: [
+    'Stort fellesareal med kjøkken',
+    'Prosjektor og lydanlegg',
+    'Utsikt over havna og fjorden',
+    'Egen parkering',
+    'Toaletter og garderober',
+    'Tilgang til utendørs bryggeområde',
+  ],
+  price: 'Fra 2 500 kr / dag',
+};
+
+export type GuestBerthInfo = {
+  title: string;
+  description: string;
+  details: string[];
+};
+
+export const guestBerthInfo: GuestBerthInfo = {
+  title: 'Gjestebrygge i Son',
+  description:
+    'Seilere og båtgjester er hjertelig velkommen til Soon Seilforenings gjestebrygge. Vi tilbyr fortøyning for besøkende båter i kortere eller lengre perioder, med tilgang til klubbhusets fasiliteter.',
+  details: [
+    'Gjesteplasser for båt opptil 12 meter',
+    'Tilgang til strøm og vann på brygga',
+    'Toaletter og dusj i klubbhuset',
+    'Kort avstand til Sentralbadet og sentrum av Son',
+    'Meld ankomst på forhånd via kontoret@soonsf.no',
+    'Pris: 200 kr / natt · Sesongrabatt tilgjengelig',
+  ],
+};

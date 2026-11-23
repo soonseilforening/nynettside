@@ -1,5 +1,6 @@
+import { Link } from 'react-router-dom';
 import { Wind, CalendarCheck } from 'lucide-react';
-import { externalLinks } from '@/siteConfig';
+import { externalLinks, siteConfig } from '@/siteConfig';
 
 const heroImg =
   'https://images.pexels.com/photos/13214267/pexels-photo-13214267.jpeg?auto=compress&cs=tinysrgb&h=1200&w=1920';
@@ -38,7 +39,7 @@ export default function Hero() {
             className="mt-5 text-lg sm:text-xl text-slate-200 leading-relaxed max-w-xl animate-fade-up"
             style={{ animationDelay: '0.16s' }}
           >
-            Velkommen til Soon Seilforening – for seilere i alle aldre.
+            Velkommen til {siteConfig.name} – for seilere i alle aldre.
           </p>
 
           {/* Dual CTAs */}
@@ -54,6 +55,12 @@ export default function Hero() {
             >
               Bli medlem (Rubic)
             </a>
+            <Link
+              to="/seilkurs"
+              className="inline-flex items-center justify-center gap-2 rounded-xl border border-white/30 bg-white/10 px-6 py-3.5 text-base font-600 text-white backdrop-blur-sm hover:bg-white/20 hover:border-white/50 transition-all duration-200"
+            >
+              Se seilkurs
+            </Link>
             <a
               href={externalLinks.weatherYr}
               target="_blank"

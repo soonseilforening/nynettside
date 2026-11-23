@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { Newspaper, ArrowUpRight } from 'lucide-react';
 import { newsItems } from '@/siteConfig';
 
@@ -15,12 +16,12 @@ export default function NewsFeed() {
               Nyheter fra foreningen
             </h2>
           </div>
-          <a
-            href="#nytt"
-            className="inline-flex items-center gap-1.5 text-sm font-600 text-navy-700 hover:text-crimson-600 transition-colors"
+          <Link
+            to="/nyheter"
+            className="inline-flex items-center gap-1.5 text-sm font-600 text-[#0C1C8C] hover:text-crimson-600 transition-colors"
           >
             Alle nyheter <ArrowUpRight className="h-4 w-4" />
-          </a>
+          </Link>
         </div>
 
         <div className="grid md:grid-cols-3 gap-6">
@@ -46,12 +47,12 @@ export default function NewsFeed() {
                   {item.title}
                 </h3>
                 <p className="mt-2 text-sm text-slate-600 leading-relaxed flex-1">{item.excerpt}</p>
-                <a
-                  href="#nytt"
+                <Link
+                  to="/nyheter"
                   className="mt-4 inline-flex items-center gap-1.5 text-sm font-600 text-crimson-600 hover:text-crimson-700 transition-colors"
                 >
                   Les mer <ArrowUpRight className="h-4 w-4" />
-                </a>
+                </Link>
               </div>
             </article>
           ))}

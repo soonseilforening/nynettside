@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { CalendarDays, Clock, Tag, ArrowUpRight, Anchor } from 'lucide-react';
 import { upcomingEvents, externalLinks, type SailingEvent } from '@/siteConfig';
 
@@ -68,7 +69,7 @@ export default function Activities() {
                   href={externalLinks.rubicSignup}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center gap-2 w-full rounded-xl bg-navy-900 px-4 py-3 text-sm font-600 text-white hover:bg-navy-800 group-hover:bg-crimson-500 group-hover:shadow-lg group-hover:shadow-crimson-500/25 transition-all duration-200"
+                  className="inline-flex items-center justify-center gap-2 w-full rounded-xl bg-[#0C1C8C] px-4 py-3 text-sm font-600 text-white hover:bg-[#0C1C8C]/90 group-hover:bg-crimson-500 group-hover:shadow-lg group-hover:shadow-crimson-500/25 transition-all duration-200"
                 >
                   Gå til påmelding i Rubic
                   <ArrowUpRight className="h-4 w-4" />
