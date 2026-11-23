@@ -10,7 +10,7 @@ Nyhetene skrives i **Sanity Studio**, og nettsiden henter dem derfra. Skribenten
 |---|---|
 | Sanity-prosjekt | `soonseilforening` på sanity.io/manage, prosjekt-ID `dzgfs6fk` |
 | Dataset | `production` |
-| Studio (redigeringssiden) | Koden ligger i `/studio`. Publiseres til soonseilforening.sanity.studio |
+| Studio (redigeringssiden) | https://soonseilforening.sanity.studio (publisert 23.11.2026). Koden ligger i `/studio` |
 | Nettsiden | Henter nyheter fra Sanity (kun lesing, ingen API-nøkkel) |
 
 ## Kostnad
@@ -85,6 +85,8 @@ npm run deploy
 ```
 
 Studio blir da tilgjengelig på soonseilforening.sanity.studio. Skribentene logger inn der.
+
+Publisering krever innlogging (`npx sanity login`) eller en token med rollen **Deploy Studio** i miljøvariabelen `SANITY_AUTH_TOKEN`. Tokens skal aldri committes, og bør trekkes tilbake etter bruk.
 
 ### CORS
 
