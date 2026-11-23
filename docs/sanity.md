@@ -8,7 +8,7 @@ Nyhetene skrives i **Sanity Studio**, og nettsiden henter dem derfra. Skribenten
 
 | Del | Hvor |
 |---|---|
-| Sanity-prosjekt | `soonseilforening` på sanity.io/manage |
+| Sanity-prosjekt | `soonseilforening` på sanity.io/manage, prosjekt-ID `dzgfs6fk` |
 | Dataset | `production` |
 | Studio (redigeringssiden) | Koden ligger i `/studio`. Publiseres til soonseilforening.sanity.studio |
 | Nettsiden | Henter nyheter fra Sanity (kun lesing, ingen API-nøkkel) |
@@ -79,8 +79,9 @@ Studio blir da tilgjengelig på soonseilforening.sanity.studio. Skribentene logg
 
 ### CORS
 
-Nettsidens adresser må legges inn under **API → CORS origins** på sanity.io/manage, ellers får ikke nettsiden hente nyheter:
-- Forhåndsvisningen i Bolt
+Nettsidens adresser må legges inn under **API → CORS origins** på sanity.io/manage, ellers får ikke nettsiden hente nyheter. Legg inn bare domenet (f.eks. `https://www.soonseilforening.no`), uten sti. **Allow credentials** skal være av for nettsiden, fordi den bare leser offentlig innhold.
+
+- Forhåndsvisningen i Bolt: domenet til forhåndsvisningen (ender på `.webcontainer-api.io`), ikke adressen til Bolt-editoren (`bolt.new/~/…`). Må legges inn på nytt hvis Bolt-prosjektet lages på nytt
 - Netlify-adressen (når den finnes)
 - https://www.soonseilforening.no (ved lansering)
 
