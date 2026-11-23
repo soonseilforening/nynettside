@@ -78,23 +78,34 @@ flowchart TB
 
 ### Sider
 
-Første versjon fra Bolt var én lang side. Den deles opp i egne sider med egne adresser, slik at det blir lettere å lenke til dem og finne dem i søkemotorer.
+Hver side har sin egen adresse (React Router). Filen `public/_redirects` sørger for at direkte lenker til undersider fungerer på Netlify.
 
 | Side | Adresse | Innhold |
 |---|---|---|
 | Hjem | `/` | Velkomst, vær (lenker til Windy og Yr), kommende aktiviteter og siste nyheter |
 | Aktiviteter | `/aktiviteter` | Seilas, trening, dugnad og regattaer |
-| Seilkurs | `/seilkurs` | Kurs for barn og voksne, sommer-seilskole |
-| Utleie av lokalet | `/utleie` | Informasjon om selskapslokalet. Bookingskjemaet kommer senere |
+| – Seilkurs | `/aktiviteter/seilkurs` | Kurs for barn og voksne, sommer-seilskole |
+| Utleielokale | `/utleielokale` | Informasjon om selskapslokalet. Bookingskjemaet kommer senere |
 | Gjestebrygge | `/gjestebrygge` | Informasjon for tilreisende båtfolk |
+| Medlemskap | `/medlemskap` | Kontingent, innmelding og utmelding (tekst fra `content/tekster/medlemskap.md`) |
 | Nyheter | `/nyheter` | Nyhetsartikler |
-| Om oss / Kontakt | `/om-oss` | Om foreningen, adresse og kontakt (kontoret@soonsf.no) |
+| Om oss | `/om-oss` | Om foreningen (tekst fra `content/tekster/om-oss.txt`), kontakt og «Våre grupper» |
+| – Jolle | `/om-oss/jolle` | Gruppeside |
+| – Kjølbåt-Sport | `/om-oss/kjolbat-sport` | Gruppeside |
+| – Ladies Sailing | `/om-oss/ladies-sailing` | Gruppeside (navnet skal avklares med gruppeleder) |
+| – Drake | `/om-oss/drake` | Gruppeside |
+
+Sider merket med «–» er undersider og vises som underpunkter i menyen. Adressene bruker bare ASCII-tegn (`kjolbat`, ikke `kjølbåt`).
+
+Gruppesidene bruker én felles komponent (`src/pages/GroupPage.tsx`), og dataene for alle gruppene ligger i `src/siteConfig.ts`. Gruppelederne skriver tekstene, som legges i `content/tekster/` før de settes inn.
 
 Medlemsportal: Innlogging og innmelding går via lenker til Rubic (foreningens medlemssystem). Nettsiden lagrer ingen medlemsdata selv.
 
 ### Hvor innholdet ligger nå (midlertidig)
 
-Nyheter, arrangementer og lenker ligger foreløpig **hardkodet i en konfigurasjonsfil** i `src/`. Det betyr at endringer i innhold krever en endring i koden.
+Nyheter, arrangementer, grupper og lenker ligger foreløpig **hardkodet i konfigurasjonsfilen** `src/siteConfig.ts`. Det betyr at endringer i innhold krever en endring i koden.
+
+Innhold vi ikke har fasit for ennå (priser, kapasiteter, fasiliteter, arrangementer, nyheter og gruppetekster), er merket «[EKSEMPEL – må fylles inn]» på nettsiden. Fasittekster legges i `content/tekster/`.
 
 Dette er en bevisst mellomløsning:
 
