@@ -8,6 +8,8 @@ export const siteConfig = {
   bryggeEmail: 'brygge@soonsf.no',
   address: 'Storgata 29B, 1555 Son',
   profileColor: '#0C1C8C',
+  // Sett til false ved lansering (se docs/lansering.md)
+  underConstruction: true,
 };
 
 export const externalLinks = {

@@ -51,7 +51,7 @@ flowchart TB
 
 | Del | Rolle |
 |---|---|
-| Bolt.new | Bygger første versjon av nettsiden med AI og er koblet til GitHub |
+| Bolt.new | Bygde første versjon av nettsiden (avsluttet 23.11.2026). Videre endringer gjøres av Claude direkte i GitHub |
 | GitHub | Eneste sted koden ligger. Organisasjonen `soonseilforening` eier repoet `nynettside` |
 | Netlify | Bygger og publiserer nettsiden automatisk ved hver commit til `main` |
 | soonseilforening.no | Domenet pekes til Netlify først ved lansering. Wix-siden er i drift fram til da |
@@ -165,6 +165,8 @@ Detaljene skal dokumenteres i `docs/bookingflyt.md`. Tabeller og felt skal dokum
 | 2026-11-22 | Bookingadministrasjonen blir i Google Sheets | Fungerer allerede, og admin kjenner verktøyet |
 
 Nye beslutninger føres inn i `docs/beslutninger.md`.
+
+Sjekklisten for lansering ligger i `docs/lansering.md`.
 
 ## Åpne spørsmål
 

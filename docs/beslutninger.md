@@ -4,6 +4,9 @@ Her føres alle beslutninger om nettsiden og de digitale løsningene, med nyeste
 
 | Dato | Beslutning | Begrunnelse |
 |---|---|---|
+| 2026-11-23 | Videre utvikling gjøres av Claude direkte i GitHub, ikke i Bolt | Gratiskvoten i Bolt er brukt opp. Det er planlagt steg 2 i arkitekturen, og det koster ingenting ekstra |
+| 2026-11-23 | Netlify (gratisplan) brukes som forhåndsvisning på en netlify.app-adresse før lansering | Erstatter forhåndsvisningen i Bolt. Domenet berøres ikke |
+| 2026-11-23 | Testversjonen har «Under arbeid»-stripe og blokkerer søkemotorer | Siden er offentlig på netlify.app, men har fortsatt eksempeltekst. Fjernes ved lansering (`docs/lansering.md`) |
 | 2026-11-23 | Styresiden viser bare navn, rolle, bilde og funksjonsadresser på soonsf.no | Private e-postadresser publiseres ikke (GDPR). Adressene blir stående når styret skiftes ut |
 | 2026-11-23 | Kjølbåt og sportsbåt er én gruppe, Kjølbåt-Sport, med én side | Gruppesiden viser begge kontaktpersonene |
 | 2026-11-23 | Ingen Facebook-lenker på nettsiden foreløpig | Skal vurderes senere |

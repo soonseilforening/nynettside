@@ -1,0 +1,3 @@
+# Testversjon: ikke indekser. Byttes ut ved lansering (se docs/lansering.md)
+User-agent: *
+Disallow: /

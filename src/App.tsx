@@ -12,6 +12,7 @@ import NewsArticlePage from '@/pages/NewsArticlePage';
 import AboutPage from '@/pages/AboutPage';
 import GroupPage from '@/pages/GroupPage';
 import BoardPage from '@/pages/BoardPage';
+import UnderConstructionBanner from '@/components/UnderConstructionBanner';
 
 function App() {
   return (
@@ -34,6 +35,7 @@ function App() {
           </Routes>
         </main>
         <Footer />
+        <UnderConstructionBanner />
       </div>
     </BrowserRouter>
   );
