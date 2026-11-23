@@ -40,6 +40,15 @@ Gratisplanen: 0 kr, opptil 20 brukere og 10 000 dokumenter. Datasettene er offen
 
 Foreslåtte kategorier (fra dagens Wix-blogg): Styret, Jolle, Kjølbåt, Regatta, Kurs og utdanning, Neptun, Hollænderseilasen.
 
+## Innhold flyttet fra Wix
+
+23. november 2026 ble alle 27 innleggene fra Wix-bloggen (2024–2026) importert med tekst, hovedbilde og bilder i teksten (43 bilder). Skriptet ligger i `studio/scripts/import-wix-nyheter.mjs`.
+
+- Adressene er nye: `/nyheter/<tittel>` i stedet for `/post/<tittel>`. Ved lansering bør de gamle `/post/...`-adressene videresendes (Netlify `_redirects`).
+- Ingressen er laget automatisk fra starten av teksten. Den kan forbedres i Studio.
+- Alt-teksten på hovedbildene er generell («Bilde til nyheten …») og bør forbedres for de viktigste nyhetene.
+- Innleggene har ikke fått kategori. Kategoriene er opprettet og kan settes i Studio.
+
 ## Slik vises nyhetene på nettsiden
 
 - **Forsiden:** de 3 nyeste nyhetene med hovedbilde, tittel, dato, ingress og «Les mer».
