@@ -52,9 +52,9 @@ Prosjekt-ID og dataset er ikke hemmelige, men legges som miljøvariabler så de 
 
 | Variabel | Brukes av | Verdi |
 |---|---|---|
-| `SANITY_STUDIO_PROJECT_ID` | Studio (`/studio/.env`) | Prosjekt-ID fra sanity.io/manage |
+| `SANITY_STUDIO_PROJECT_ID` | Studio (`/studio/.env`) | `dzgfs6fk` |
 | `SANITY_STUDIO_DATASET` | Studio | `production` |
-| `VITE_SANITY_PROJECT_ID` | Nettsiden (Netlify/Bolt) | Samme prosjekt-ID |
+| `VITE_SANITY_PROJECT_ID` | Nettsiden (Netlify/Bolt) | `dzgfs6fk` |
 | `VITE_SANITY_DATASET` | Nettsiden | `production` |
 
 ## Drift
@@ -79,11 +79,18 @@ Studio blir da tilgjengelig på soonseilforening.sanity.studio. Skribentene logg
 
 ### CORS
 
-Nettsidens adresser må legges inn under **API → CORS origins** på sanity.io/manage, ellers får ikke nettsiden hente nyheter. Legg inn bare domenet (f.eks. `https://www.soonseilforening.no`), uten sti. **Allow credentials** skal være av for nettsiden, fordi den bare leser offentlig innhold.
+Nettsidens adresser må legges inn under **Settings → API → CORS origins** på sanity.io/manage, ellers får ikke nettsiden hente nyheter i nettleseren. Skriv bare protokoll og domene, uten sti (f.eks. `https://www.soonseilforening.no`, ikke `https://www.soonseilforening.no/nyheter`).
 
-- Forhåndsvisningen i Bolt: domenet til forhåndsvisningen (ender på `.webcontainer-api.io`), ikke adressen til Bolt-editoren (`bolt.new/~/…`). Må legges inn på nytt hvis Bolt-prosjektet lages på nytt
-- Netlify-adressen (når den finnes)
-- https://www.soonseilforening.no (ved lansering)
+**«Allow credentials» skal være avslått** for nettsidens adresser. Nettsiden leser bare offentlig innhold og logger ikke inn. Bare Studio-adressen trenger credentials, og den legges inn automatisk når Studio publiseres.
+
+| Adresse | Når |
+|---|---|
+| `https://*.local-credentialless.webcontainer-api.io` | Forhåndsvisning i Bolt (adressen til Bolt-editoren, bolt.new/~/…, virker ikke) |
+| `http://localhost:5173` | Lokal utvikling |
+| Netlify-adressen | Når Netlify er satt opp |
+| `https://www.soonseilforening.no` og `https://soonseilforening.no` | Ved lansering |
+
+Jokertegnet for Bolt lar alle forhåndsvisninger i Bolt lese innholdet. Det er greit fordi datasettet uansett er offentlig. Fjern det når Bolt ikke brukes lenger.
 
 ### Brukere
 
