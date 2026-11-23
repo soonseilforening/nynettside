@@ -16,7 +16,7 @@ flowchart TB
     end
 
     subgraph Kode["Kode og publisering"]
-        BOLT["Bolt.new"] --> GH["GitHub<br/>soonseilforening/nettside"]
+        BOLT["Bolt.new"] --> GH["GitHub<br/>soonseilforening/nynettside"]
         GH --> NET["Netlify"]
         NET --> DOM["soonseilforening.no"]
     end
