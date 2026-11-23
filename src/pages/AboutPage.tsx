@@ -1,7 +1,7 @@
-import { MapPin, Mail, Users, Calendar, ClipboardList, FolderArchive, Trophy, Anchor, ArrowUpRight } from 'lucide-react';
+import { MapPin, Mail, Users, Calendar, ClipboardList, FolderArchive, Trophy, Anchor, ArrowUpRight, AlertCircle } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import PageHeader from '@/components/PageHeader';
-import { siteConfig, quickLinks, aboutText } from '@/siteConfig';
+import { siteConfig, quickLinks, aboutText, groups } from '@/siteConfig';
 
 const iconMap = { Trophy, Anchor, ClipboardList, FolderArchive } as const;
 
@@ -48,6 +48,41 @@ export default function AboutPage() {
                 </div>
               );
             })}
+          </div>
+
+          {/* Our groups */}
+          <div className="mt-14">
+            <h2 className="font-display text-2xl font-700 text-slate-900">Våre grupper</h2>
+            <p className="mt-2 text-slate-600">
+              Soon Seilforening er inndelt i ulike undergrupper. Les mer om hver gruppe nedenfor.
+            </p>
+
+            <div className="mt-6 flex items-start gap-2.5 rounded-xl bg-amber-50 border border-amber-200 px-4 py-3">
+              <AlertCircle className="h-5 w-5 text-amber-600 shrink-0 mt-0.5" />
+              <p className="text-sm text-amber-800">
+                Beskrivelsene av gruppene er eksempeltekst og vil bli fylt inn når innhold er klart.
+              </p>
+            </div>
+
+            <div className="mt-6 grid sm:grid-cols-2 gap-4">
+              {groups.map((group) => (
+                <Link
+                  key={group.slug}
+                  to={`/om-oss/${group.slug}`}
+                  className="group flex flex-col rounded-2xl border border-slate-200 bg-white p-5 shadow-sm hover:shadow-lg hover:border-[#0C1C8C]/30 transition-all duration-200"
+                >
+                  <h3 className="font-display text-lg font-700 text-slate-900 group-hover:text-[#0C1C8C] transition-colors">
+                    {group.name}
+                  </h3>
+                  <p className="mt-2 text-sm text-slate-600 leading-relaxed flex-1">
+                    {group.shortDescription}
+                  </p>
+                  <span className="mt-4 inline-flex items-center gap-1.5 text-sm font-600 text-[#0C1C8C] group-hover:text-crimson-600 transition-colors">
+                    Les mer <ArrowUpRight className="h-4 w-4" />
+                  </span>
+                </Link>
+              ))}
+            </div>
           </div>
 
           {/* Contact + Quick links */}

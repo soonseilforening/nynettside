@@ -38,7 +38,84 @@ export const navLinks: NavLink[] = [
   { label: 'Gjestebrygge', path: '/gjestebrygge' },
   { label: 'Medlemskap', path: '/medlemskap' },
   { label: 'Nyheter', path: '/nyheter' },
-  { label: 'Om oss', path: '/om-oss' },
+  {
+    label: 'Om oss',
+    path: '/om-oss',
+    children: [
+      { label: 'Jolle', path: '/om-oss/jolle' },
+      { label: 'Kjølbåt-Sport', path: '/om-oss/kjolbat-sport' },
+      { label: 'Ladies Sailing', path: '/om-oss/ladies-sailing' },
+      { label: 'Drake', path: '/om-oss/drake' },
+    ],
+  },
+];
+
+export type GroupInfo = {
+  slug: string;
+  name: string;
+  shortDescription: string;
+  description: string;
+  targetGroup: string;
+  schedule: string;
+  location: string;
+  contactName: string;
+  contactEmail: string;
+  example?: boolean;
+};
+
+export const groups: GroupInfo[] = [
+  {
+    slug: 'jolle',
+    name: 'Jolle',
+    shortDescription: '[EKSEMPEL – må fylles inn] Kort beskrivelse av jollegruppen.',
+    description:
+      '[EKSEMPEL – må fylles inn] Beskrivelse av jollegruppen, hva man driver med, hvilke båttyper som brukes og nivå på seilerne.',
+    targetGroup: '[EKSEMPEL – må fylles inn] Hvem gruppen passer for (alder, nivå).',
+    schedule: '[EKSEMPEL – må fylles inn] Når gruppen møtes (ukedag, tidspunkt, sesong).',
+    location: '[EKSEMPEL – må fylles inn] Hvor gruppen møtes (klubbhus, brygge, område).',
+    contactName: '[EKSEMPEL – må fylles inn] Navn på kontaktperson',
+    contactEmail: '[EKSEMPEL – må fylles inn] E-postadresse',
+    example: true,
+  },
+  {
+    slug: 'kjolbat-sport',
+    name: 'Kjølbåt-Sport',
+    shortDescription: '[EKSEMPEL – må fylles inn] Kort beskrivelse av kjølbåt-sportgruppen.',
+    description:
+      '[EKSEMPEL – må fylles inn] Beskrivelse av kjølbåt-sportgruppen, hva man driver med, hvilke båttyper som brukes og nivå på seilerne.',
+    targetGroup: '[EKSEMPEL – må fylles inn] Hvem gruppen passer for (alder, nivå).',
+    schedule: '[EKSEMPEL – må fylles inn] Når gruppen møtes (ukedag, tidspunkt, sesong).',
+    location: '[EKSEMPEL – må fylles inn] Hvor gruppen møtes (klubbhus, brygge, område).',
+    contactName: '[EKSEMPEL – må fylles inn] Navn på kontaktperson',
+    contactEmail: '[EKSEMPEL – må fylles inn] E-postadresse',
+    example: true,
+  },
+  {
+    slug: 'ladies-sailing',
+    name: 'Ladies Sailing',
+    shortDescription: '[EKSEMPEL – må fylles inn] Kort beskrivelse av Ladies Sailing.',
+    description:
+      '[EKSEMPEL – må fylles inn] Beskrivelse av Ladies Sailing, hvor damer i alle aldre kommer sammen for å lære praktisk seiling og teori.',
+    targetGroup: '[EKSEMPEL – må fylles inn] Damer i alle aldre.',
+    schedule: '[EKSEMPEL – må fylles inn] Når gruppen møtes (ukedag, tidspunkt, sesong).',
+    location: '[EKSEMPEL – må fylles inn] Hvor gruppen møtes (klubbhus, brygge, område).',
+    contactName: '[EKSEMPEL – må fylles inn] Navn på kontaktperson',
+    contactEmail: '[EKSEMPEL – må fylles inn] E-postadresse',
+    example: true,
+  },
+  {
+    slug: 'drake',
+    name: 'Drake',
+    shortDescription: '[EKSEMPEL – må fylles inn] Kort beskrivelse av Drake-gruppen.',
+    description:
+      '[EKSEMPEL – må fylles inn] Beskrivelse av Drake-gruppen, hva man driver med, hvilke båttyper som brukes og nivå på seilerne.',
+    targetGroup: '[EKSEMPEL – må fylles inn] Hvem gruppen passer for (alder, nivå).',
+    schedule: '[EKSEMPEL – må fylles inn] Når gruppen møtes (ukedag, tidspunkt, sesong).',
+    location: '[EKSEMPEL – må fylles inn] Hvor gruppen møtes (klubbhus, brygge, område).',
+    contactName: '[EKSEMPEL – må fylles inn] Navn på kontaktperson',
+    contactEmail: '[EKSEMPEL – må fylles inn] E-postadresse',
+    example: true,
+  },
 ];
 
 export type SailingEvent = {
