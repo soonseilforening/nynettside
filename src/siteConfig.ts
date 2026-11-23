@@ -5,6 +5,7 @@ export const siteConfig = {
   name: 'Soon Seilforening',
   shortName: 'Soon SF',
   email: 'kontoret@soonsf.no',
+  bryggeEmail: 'brygge@soonsf.no',
   address: 'Storgata 29B, 1555 Son',
   profileColor: '#0C1C8C',
 };
@@ -392,24 +393,89 @@ export const venueInfo: VenueInfo = {
 };
 
 export type GuestBerthInfo = {
-  title: string;
-  description: string;
-  details: string[];
-  example?: boolean;
+  heroImage: string;
+  heroAlt: string;
+  guestIntro: string;
+  guestWelcome: string;
+  greenSign: string;
+  redSign: string;
+  greenSignDate: string;
+  guestPlacement: string;
+  paymentIntro: string;
+  vippsNumber: string;
+  goMarinaName: string;
+  paymentNote: string;
+  priceNote: string;
+  electricity: string;
+  rules: string[];
+  responsibility: string;
+  memberIntro: string;
+  memberPurpose: string;
+  memberCriteria: string[];
+  winterMooring: string;
+  mooringIntro: string;
+  mooringRules: string[];
+  mooringFigure: string;
+  mooringFigureAlt: string;
+  contactEmail: string;
 };
 
 export const guestBerthInfo: GuestBerthInfo = {
-  title: 'Gjestebrygge i Son',
-  description:
-    'Seilere og båtgjester er hjertelig velkommen til Soon Seilforenings gjestebrygge. Vi tilbyr fortøyning for besøkende båter, med tilgang til klubbhusets fasiliteter.',
-  details: [
-    '[EKSEMPEL – må fylles inn] Detalj om plasser',
-    '[EKSEMPEL – må fylles inn] Detalj om strøm/vann',
-    '[EKSEMPEL – må fylles inn] Detalj om toalett/dusj',
-    'Meld ankomst på forhånd via kontoret@soonsf.no',
-    '[EKSEMPEL – må fylles inn] Pris per natt',
+  heroImage: '/bilder/gjestebrygge/gjestebrygge-01.jpg',
+  heroAlt:
+    'Seilbåter fortøyd ved Soon Seilforenings brygge en solrik dag, med Son i bakgrunnen',
+  guestIntro:
+    'Soon Seilforening har egen brygge utenfor klubbhuset, der medlemmer har faste bryggeplasser. Når medlemmene er ute på tur, leies disse ut som gjesteplasser. I tillegg er det 140 meter med longside-plasser for gjester på sørsiden av bølgebryteren.',
+  guestWelcome:
+    'Denne bryggen eies og drives av Soon Seilforening på dugnad. Vi håper du vil trives her og bidra til at anlegget vårt er et hyggelig sted å være. Vi har noen enkle kjøreregler:',
+  greenSign: 'Plassen er ledig til neste morgen.',
+  redSign: 'Du kan ikke ligge der.',
+  greenSignDate:
+    'Står det en dato under det grønne skiltet, kan du ikke ligge lenger enn til morgenen den datoen som er skrevet.',
+  guestPlacement:
+    'Gjester kan også ligge longside på utsiden av bryggen eller på enden. Båsene er reservert for dem som skal overnatte. Båter på dagbesøk kan ligge longside eller bruke den kommunale gjestehavnen, med mindre man blir tildelt en plass av havneverten.',
+  paymentIntro:
+    'Det koster å drive en brygge. Alle gjester må være med på dugnaden ved å betale for å ligge her. Blir det et overskudd, går det til arbeidet for å trygge barn og unge i vann og på sjøen, og til aktiviteten i jollegruppen vår.',
+  vippsNumber: '609056',
+  goMarinaName: 'Soon Seilforening Gjestebrygge',
+  paymentNote:
+    'Billettene fra automaten til Vestby kommune er ikke gyldige her. De gjelder bare for den kommunale gjestehavnen lenger inn.',
+  priceNote: 'Prisene står oppslått på bryggen.',
+  electricity:
+    'Strøm er inkludert i leieprisen. Du kan fylle vann fra slangene på strømstolpene. Søppel kastes i søppelkassene ved landgangen.',
+  rules: [
+    'Det skal være ro i havnen fra kl. 23:00.',
+    'Hunder skal holdes i bånd, også snille hunder.',
+    'Det er ikke lov å fiske på bryggen. Fiskesøl tiltrekker seg måker, og kroker som fester seg i bryggefortøyningen, gjør vedlikeholdet vanskeligere for oss. For at det skal være enkelt for alle, gjør vi ingen unntak.',
   ],
-  example: true,
+  responsibility: 'All tillegging og fortøyning skjer på eget ansvar.',
+  memberIntro:
+    'Soon Seilforenings bryggeanlegg har som formål å bidra til utøvelse av idrett og fremme seilsportinteressen i Soon, jf. SSFs lover § 1.',
+  memberPurpose:
+    'SSF har som ambisjon at bryggeanlegget skal brukes av båter som eies av aktive medlemmer i foreningen. Bryggeanlegget skal fungere som et aktivitetssenter der aktive medlemmer møtes for trening, erfaringsutveksling, konkurranse, andre seilsportrelaterte aktiviteter og sosialt samvær.',
+  memberCriteria: [
+    'Er aktiv regattaseiler, enten i foreningens onsdagsseilaser, i andre regattaer på OAS eller NSFs terminliste, eller i internasjonale mesterskap',
+    'Har et verv i foreningen',
+    'Deltar som frivillig på minst to av SSFs arrangementer',
+  ],
+  winterMooring:
+    'Leietaker i sommersesongen har fortrinnsrett til den samme plassen i vintersesongen, og må varsle bryggekomiteen innen 15. september om han eller hun ønsker vinterplass. Hvis ikke, kan bryggekomiteen leie ut plassen til andre for vintersesongen. I vintersesongen kan bryggekomiteen fravike kravene over for å fylle plassene.',
+  mooringIntro:
+    'Havna ligger utsatt til for vær og vind. Det er derfor viktig at alle fortøyer båtene slik at vi unngår skader. Eieren er ansvarlig for skader på anlegget og andre båter som skyldes utilstrekkelig fortøyning.',
+  mooringRules: [
+    'Alle båter skal fortøyes i henhold til figuren, med minst 2 fortøyninger i baug og akter, i tillegg til 4 spring.',
+    'Alle fortøyninger skal dimensjoneres for verst tenkelige vær (over 25 m/s), minimum 14 mm.',
+    'Alle tau skal ha strekkavlastere i gummi.',
+    'Alle båter over 1 tonn skal bruke spring begge veier. Disse skal festes i «padlock» direkte i betongen der de er montert.',
+    'Alle tau skal ha dynamiske egenskaper som egner seg til fortøyning. Gamle fall og skjøter egner seg IKKE til fortøyning.',
+    'Alle båter skal bruke fendere av riktig størrelse.',
+    'Båter skal ikke forlates i lengre tid med akterenden inn mot bryggen. Ved uvær skal alle båter ligge med baugen mot bryggen (sør).',
+    'Kontroller båt og fortøyning før varslet uvær. Er det meldt skikkelig uvær, kan det være lurt å ha dobbelt opp med fortøyninger.',
+  ],
+  mooringFigure: '/bilder/gjestebrygge/fortoyning-figur.jpg',
+  mooringFigureAlt:
+    'Figur som viser riktig fortøyning i bås: to fortøyninger i baug og akter, og fire spring',
+  contactEmail: 'brygge@soonsf.no',
 };
 
 // Content from content/tekster/om-oss.txt

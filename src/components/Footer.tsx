@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { MapPin, Mail, Facebook, Instagram, ArrowUpRight } from 'lucide-react';
+import { MapPin, Mail, Anchor, Facebook, Instagram, ArrowUpRight } from 'lucide-react';
 import { externalLinks, navLinks, siteConfig } from '@/siteConfig';
 
 const aboutLinks = [
@@ -43,6 +43,15 @@ export default function Footer() {
                   className="hover:text-white transition-colors"
                 >
                   {siteConfig.email}
+                </a>
+              </li>
+              <li className="flex items-center gap-2.5">
+                <Anchor className="h-4 w-4 text-white/60" />
+                <a
+                  href={`mailto:${siteConfig.bryggeEmail}`}
+                  className="hover:text-white transition-colors"
+                >
+                  {siteConfig.bryggeEmail}
                 </a>
               </li>
             </ul>
