@@ -5,7 +5,7 @@
 - Single-page application for **Son Seilforening** (Norwegian sailing club).
 - Audience: club members and prospective members; public-facing site with member portal links.
 - Sections: Hjem (Hero), Værinformasjon (WeatherConditions), Aktiviteter, Nyheter (NewsFeed), Medlemsportal (MemberPortal), Om oss/Footer, Navbar.
-- Content (events, news, links) is currently hardcoded in a config file.
+- News content sourced from Sanity CMS (replacing hardcoded config for news).
 
 ## Brand personality & voice
 
@@ -22,12 +22,17 @@
 ## Decisions, constraints & rationale
 
 - Stack: React + TypeScript, Vite, Tailwind CSS, Lucide React.
-- Supabase client (`@supabase/supabase-js`) installed as dependency but not yet wired into code; no DB account configured.
-- All data hardcoded in config — rationale: simple MVP, Supabase available for future persistence.
+- **Sanity CMS** integrated for news content (`@sanity/client`); requires `projectId` and `dataset` env vars.
+- Env vars must use `VITE_` prefix (e.g. `VITE_SANITY_PROJECT_ID`) for Vite to expose them to the browser.
+- `.env` file is not persisted across sessions — must be recreated if missing; Sanity client includes hardcoded fallback values to avoid crash when env vars absent.
+- Sanity setup instructions in `docs/sanity.md`.
+- Supabase (`@supabase/supabase-js`) still installed but not wired in; may be used for future persistence of events/auth.
 - Path alias `@/` maps to `src/` (authoritative in `.bolt/prompt`).
 
 ## Open questions & assumptions
 
-- Should Supabase be connected so news/events persist in DB instead of hardcoded config?
+- CORS origins must be configured in Sanity dashboard for browser requests to succeed (see `docs/sanity.md`).
+- Should events/activities also move to Sanity, or remain hardcoded config?
+- Supabase role unclear now that Sanity is used for news — keep or remove?
 - No backend/auth currently; member portal relies on external Rubic links.
 - Assumption: site remains a single-page app; routing not introduced yet.

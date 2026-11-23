@@ -5,8 +5,8 @@ const projectId = import.meta.env.VITE_SANITY_PROJECT_ID;
 const dataset = import.meta.env.VITE_SANITY_DATASET;
 
 export const sanityClient = createClient({
-  projectId,
-  dataset,
+  projectId: projectId || 'dzgfs6fk',
+  dataset: dataset || 'production',
   useCdn: true,
   apiVersion: '2025-01-01',
 });
