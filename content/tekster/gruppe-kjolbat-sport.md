@@ -27,6 +27,3 @@ Møt opp på brygga til seilforeningen en onsdag klokken 17:30, så får du plas
 | Leder, kjølbåt | Mads Francke | kjolbaat@soonsf.no |
 | Styremedlem, sportsbåt | Jonas Alexander Sørlie | sport@soonsf.no |
 
-## Mer informasjon
-
-Kjølbåtgruppen legger fortløpende ut informasjon om aktiviteter og resultatlister fra onsdagsregattaen på foreningens Facebook-side.
