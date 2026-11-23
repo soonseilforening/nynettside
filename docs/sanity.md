@@ -66,6 +66,10 @@ Prosjekt-ID og dataset er ikke hemmelige, men legges som miljøvariabler så de 
 | `VITE_SANITY_PROJECT_ID` | Nettsiden (Netlify/Bolt) | `dzgfs6fk` |
 | `VITE_SANITY_DATASET` | Nettsiden | `production` |
 
+**Viktig:** `.env` ligger ikke i GitHub (den er i `.gitignore`). Bolt har sin egen `.env`. Når Netlify settes opp, må `VITE_SANITY_PROJECT_ID` og `VITE_SANITY_DATASET` legges inn under **Site configuration → Environment variables**, ellers bygges nettsiden uten nyheter. Malen ligger i `.env.example`.
+
+Koden for Sanity på nettsiden ligger i `src/lib/sanity.ts` (klient og bilder) og `src/lib/queries.ts` (GROQ-spørringer).
+
 ## Drift
 
 ### Starte Studio lokalt (for utvikler)
