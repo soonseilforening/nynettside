@@ -130,6 +130,8 @@ Pakken `@supabase/supabase-js` ligger allerede i prosjektet og kan brukes mot fo
 
 Skribentene trenger verken GitHub, Netlify eller Claude.
 
+Oppsett, felter og drift av Sanity er beskrevet i `docs/sanity.md`. Koden for Sanity Studio ligger i `/studio`.
+
 ## Flyt for booking av selskapslokalet
 
 ```
