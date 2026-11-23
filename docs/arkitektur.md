@@ -1,6 +1,6 @@
 # Arkitektur – nettsiden til Soon Seilforening
 
-Sist oppdatert: 22. november 2026
+Sist oppdatert: 23. november 2026
 
 ## Kort fortalt
 
@@ -64,6 +64,50 @@ flowchart TB
 | Supabase | Database (Postgres) for bookinger og leietakere, pluss fillagring. Erstatter Wix CMS og Velo |
 | Google Workspace | Google Kalender viser når lokalet er utleid. Bookingadministrasjonen gjøres i Google Sheets, som i dag |
 
+## Nettsiden i dag (første versjon fra Bolt)
+
+### Teknologi
+
+| Del | Hva det er |
+|---|---|
+| React + TypeScript | Rammeverket som brukergrensesnittet er bygget i |
+| Vite | Byggverktøy. Lager de ferdige filene som Netlify publiserer |
+| Tailwind CSS | Styling. Profilfarge `#0C1C8C` og hvit bakgrunn på alle sider |
+| Lucide React | Ikoner |
+| React Router | Gir hver side sin egen adresse, f.eks. `/utleie`. *Legges til i neste steg* |
+
+### Sider
+
+Første versjon fra Bolt var én lang side. Den deles opp i egne sider med egne adresser, slik at det blir lettere å lenke til dem og finne dem i søkemotorer.
+
+| Side | Adresse | Innhold |
+|---|---|---|
+| Hjem | `/` | Velkomst, vær (lenker til Windy og Yr), kommende aktiviteter og siste nyheter |
+| Aktiviteter | `/aktiviteter` | Seilas, trening, dugnad og regattaer |
+| Seilkurs | `/seilkurs` | Kurs for barn og voksne, sommer-seilskole |
+| Utleie av lokalet | `/utleie` | Informasjon om selskapslokalet. Bookingskjemaet kommer senere |
+| Gjestebrygge | `/gjestebrygge` | Informasjon for tilreisende båtfolk |
+| Nyheter | `/nyheter` | Nyhetsartikler |
+| Om oss / Kontakt | `/om-oss` | Om foreningen, adresse og kontakt (kontoret@soonsf.no) |
+
+Medlemsportal: Innlogging og innmelding går via lenker til Rubic (foreningens medlemssystem). Nettsiden lagrer ingen medlemsdata selv.
+
+### Hvor innholdet ligger nå (midlertidig)
+
+Nyheter, arrangementer og lenker ligger foreløpig **hardkodet i en konfigurasjonsfil** i `src/`. Det betyr at endringer i innhold krever en endring i koden.
+
+Dette er en bevisst mellomløsning:
+
+1. **Nå:** Innholdet ligger i konfigurasjonsfilen.
+2. **Når Sanity er satt opp:** Nyheter og arrangementer flyttes til Sanity, og skribentene kan publisere selv.
+3. **Når bookingen bygges:** Nettsiden kobles til foreningens eget Supabase-prosjekt.
+
+### Database i Bolt brukes ikke
+
+Bolt tilbyr sin egen database («Bolt Database»), som er en Supabase-database som styres via Bolt-kontoen. **Den skal ikke brukes.** Foreningen skal ha et eget Supabase-prosjekt som eies av foreningen og har minst to administratorer fra styret. Da kan andre frivillige overta, og dataene er ikke knyttet til én persons Bolt-konto.
+
+Pakken `@supabase/supabase-js` ligger allerede i prosjektet og kan brukes mot foreningens eget Supabase-prosjekt når bookingen bygges.
+
 ## Flyt for innhold
 
 1. En skribent logger inn i Sanity Studio og skriver et innlegg med bilder.
@@ -108,6 +152,6 @@ Nye beslutninger føres inn i `docs/beslutninger.md`.
 
 ## Åpne spørsmål
 
-- Hvilke sider og hvilket innhold skal flyttes fra dagens Wix-side?
-- Skal medlemmene kunne logge inn på nettsiden?
+- Hvilket innhold skal flyttes fra dagens Wix-side til de nye sidene?
+- Skal medlemmene kunne logge inn på nettsiden, eller holder det med lenker til Rubic?
 - Når skal domenet flyttes til Netlify?
