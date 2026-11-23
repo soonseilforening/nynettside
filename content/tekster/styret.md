@@ -10,21 +10,23 @@ Soon Seilforening drives av et frivillig styre som dekker foreningens virkeområ
 
 ## Personer
 
-Status for e-post: **finnes** = adressen er i bruk i dag. **må opprettes** = ny funksjonsadresse som må lages i Google Workspace før siden publiseres.
+Alle e-postadresser er funksjonsadresser i Google Workspace. Personer uten adresse vises uten e-post.
 
-| Rolle | Navn | E-post | Status | Bilde |
-|---|---|---|---|---|
-| Kontormedarbeider | Ketil Haugland | kontoret@soonsf.no | finnes | `kontormedarbeider.jpg` |
-| Styreleder | Lars Even Nilssen | leder@soonsf.no | finnes | `styreleder.jpg` |
-| Nestleder | Ola Sillerud | nestleder@soonsf.no | må opprettes | `nestleder.jpg` |
-| Styremedlem – Hus | Dan Richard Isdahl-Engh | hus@soonsf.no | må opprettes | `styremedlem-hus.jpg` |
-| Styremedlem – Brygge | Torgeir Moringen | brygge@soonsf.no | finnes | `styremedlem-brygge.jpg` |
-| Styremedlem – Materiell | Are Nodland | materiell@soonsf.no | må opprettes | `styremedlem-materiell.jpg` |
-| Styremedlem – Sportsbåt | Jonas Alexander Sørlie | sportsbat@soonsf.no | må opprettes | `styremedlem-sportsbat.jpg` |
-| Styremedlem – Kjølbåt | Mads Francke | kjolbat@soonsf.no | må opprettes | `styremedlem-kjolbat.jpg` |
-| Styremedlem – Ladies Sailing | Janne Frich Aschjem | ladies@soonsf.no | finnes | `styremedlem-ladies-sailing.jpg` |
-| Styremedlem – Økonomi | Jan Fredrik Håvie | okonomi@soonsf.no | må opprettes | `styremedlem-okonomi.jpg` |
-| Styremedlem | Siv Marie Stornes | styret@soonsf.no | må opprettes | `styremedlem.jpg` |
+| Rolle | Navn | E-post | Bilde |
+|---|---|---|---|
+| Kontormedarbeider | Ketil Haugland | kontoret@soonsf.no | `kontormedarbeider.jpg` |
+| Styreleder | Lars Even Nilssen | leder@soonsf.no | `styreleder.jpg` |
+| Nestleder | Ola Sillerud | – | `nestleder.jpg` |
+| Styremedlem – Bygning | Dan Richard Isdahl-Engh | bygning@soonsf.no | `styremedlem-hus.jpg` |
+| Styremedlem – Brygge | Torgeir Moringen | brygge@soonsf.no | `styremedlem-brygge.jpg` |
+| Styremedlem – Materiell | Are Nodland | materiell@soonsf.no | `styremedlem-materiell.jpg` |
+| Styremedlem – Sportsbåt | Jonas Alexander Sørlie | sport@soonsf.no | `styremedlem-sportsbat.jpg` |
+| Styremedlem – Kjølbåt | Mads Francke | kjolbaat@soonsf.no | `styremedlem-kjolbat.jpg` |
+| Styremedlem – Ladies Sailing | Janne Frich Aschjem | ladies@soonsf.no | `styremedlem-ladies-sailing.jpg` |
+| Styremedlem – Økonomi | Jan Fredrik Håvie | – | `styremedlem-okonomi.jpg` |
+| Styremedlem | Siv Marie Stornes | styremedlem1@soonsf.no | `styremedlem.jpg` |
+
+Andre funksjonsadresser: jolle@soonsf.no brukes på gruppesiden for Jolle.
 
 Bildene ligger i `content/bilder/styret/` og er skalert til maks 800 piksler. Alt-tekst: «Portrett av [navn], [rolle]».
 
