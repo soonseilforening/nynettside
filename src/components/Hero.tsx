@@ -2,8 +2,7 @@ import { Link } from 'react-router-dom';
 import { Wind, CalendarCheck } from 'lucide-react';
 import { externalLinks, siteConfig } from '@/siteConfig';
 
-const heroImg =
-  'https://images.pexels.com/photos/13214267/pexels-photo-13214267.jpeg?auto=compress&cs=tinysrgb&h=1200&w=1920';
+const heroImg = '/hero-seiling.jpg';
 
 export default function Hero() {
   return (
