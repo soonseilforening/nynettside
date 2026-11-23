@@ -4,6 +4,10 @@ Her føres alle beslutninger om nettsiden og de digitale løsningene, med nyeste
 
 | Dato | Beslutning | Begrunnelse |
 |---|---|---|
+| 2026-11-23 | Styresiden viser bare navn, rolle, bilde og funksjonsadresser på soonsf.no | Private e-postadresser publiseres ikke (GDPR). Adressene blir stående når styret skiftes ut |
+| 2026-11-23 | Kjølbåt og sportsbåt er én gruppe, Kjølbåt-Sport, med én side | Gruppesiden viser begge kontaktpersonene |
+| 2026-11-23 | Ingen Facebook-lenker på nettsiden foreløpig | Skal vurderes senere |
+| 2026-11-23 | Innhold fra Wix hentes til `content/tekster/` og `content/bilder/` før det brukes på nettsiden | Gir én fasit for innholdet, uavhengig av Bolt |
 | 2026-11-23 | Undergruppene Jolle, Kjølbåt-Sport, Ladies Sailing og Drake får egne sider under Om oss | Hver gruppe får sin egen side. Gruppelederne skriver tekstene |
 | 2026-11-23 | Seilkurs ligger under Aktiviteter, ikke under Jolle | Kursene er for både barn og voksne |
 | 2026-11-23 | «Utleie av lokalet» heter «Utleielokale» (`/utleielokale`), og «Om oss / Kontakt» heter «Om oss» | Kortere og tydeligere menynavn |

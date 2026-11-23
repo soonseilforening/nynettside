@@ -1,6 +1,6 @@
 # Arkitektur – nettsiden til Soon Seilforening
 
-Sist oppdatert: 23. november 2026
+Sist oppdatert: 23. november 2026 (kveld)
 
 ## Kort fortalt
 
@@ -85,11 +85,12 @@ Hver side har sin egen adresse (React Router). Filen `public/_redirects` sørger
 | Hjem | `/` | Velkomst, vær (lenker til Windy og Yr), kommende aktiviteter og siste nyheter |
 | Aktiviteter | `/aktiviteter` | Seilas, trening, dugnad og regattaer |
 | – Seilkurs | `/aktiviteter/seilkurs` | Kurs for barn og voksne, sommer-seilskole |
-| Utleielokale | `/utleielokale` | Informasjon om selskapslokalet. Bookingskjemaet kommer senere |
-| Gjestebrygge | `/gjestebrygge` | Informasjon for tilreisende båtfolk |
+| Utleielokale | `/utleielokale` | Lokalet Neptun: tekst, priser og bilder fra `content/tekster/utleielokale.md`. Bookingskjemaet kommer senere |
+| Gjestebrygge | `/gjestebrygge` | For gjester og faste bryggeplasser (`content/tekster/gjestebrygge.md`) |
 | Medlemskap | `/medlemskap` | Kontingent, innmelding og utmelding (tekst fra `content/tekster/medlemskap.md`) |
 | Nyheter | `/nyheter` | Nyhetsartikler |
 | Om oss | `/om-oss` | Om foreningen (tekst fra `content/tekster/om-oss.txt`), kontakt og «Våre grupper» |
+| – Styret og kontoret | `/om-oss/styret` | Navn, rolle, bilde og funksjonsadresse for styret og kontormedarbeider (`content/tekster/styret.md`) |
 | – Jolle | `/om-oss/jolle` | Gruppeside |
 | – Kjølbåt-Sport | `/om-oss/kjolbat-sport` | Gruppeside |
 | – Ladies Sailing | `/om-oss/ladies-sailing` | Gruppeside (navnet skal avklares med gruppeleder) |
@@ -104,6 +105,8 @@ Medlemsportal: Innlogging og innmelding går via lenker til Rubic (foreningens m
 ### Hvor innholdet ligger nå (midlertidig)
 
 Nyheter, arrangementer, grupper og lenker ligger foreløpig **hardkodet i konfigurasjonsfilen** `src/siteConfig.ts`. Det betyr at endringer i innhold krever en endring i koden.
+
+Bilder ligger i `content/bilder/<side>/` og kopieres til `public/bilder/<side>/` når de brukes på nettsiden.
 
 Innhold vi ikke har fasit for ennå (priser, kapasiteter, fasiliteter, arrangementer, nyheter og gruppetekster), er merket «[EKSEMPEL – må fylles inn]» på nettsiden. Fasittekster legges i `content/tekster/`.
 
