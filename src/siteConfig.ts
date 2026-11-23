@@ -208,49 +208,6 @@ export const upcomingEvents: SailingEvent[] = [
   },
 ];
 
-export type NewsItem = {
-  id: string;
-  title: string;
-  excerpt: string;
-  date: string;
-  category: string;
-  image: string;
-  example?: boolean;
-};
-
-export const newsItems: NewsItem[] = [
-  {
-    id: 'ny-medlem-rekord',
-    title: '[EKSEMPEL – må fylles inn] Nyhetstittel',
-    excerpt: '[EKSEMPEL – må fylles inn] Kort sammendrag av nyheten.',
-    date: '[EKSEMPEL – må fylles inn]',
-    category: 'Nyheter',
-    image:
-      'https://images.pexels.com/photos/32991360/pexels-photo-32991360.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
-    example: true,
-  },
-  {
-    id: 'optimist-camp',
-    title: '[EKSEMPEL – må fylles inn] Nyhetstittel',
-    excerpt: '[EKSEMPEL – må fylles inn] Kort sammendrag av nyheten.',
-    date: '[EKSEMPEL – må fylles inn]',
-    category: 'Junior',
-    image:
-      'https://images.pexels.com/photos/29679810/pexels-photo-29679810.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
-    example: true,
-  },
-  {
-    id: 'havneprojekt',
-    title: '[EKSEMPEL – må fylles inn] Nyhetstittel',
-    excerpt: '[EKSEMPEL – må fylles inn] Kort sammendrag av nyheten.',
-    date: '[EKSEMPEL – må fylles inn]',
-    category: 'Anlegg',
-    image:
-      'https://images.pexels.com/photos/6155544/pexels-photo-6155544.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
-    example: true,
-  },
-];
-
 export type QuickLink = {
   id: string;
   label: string;

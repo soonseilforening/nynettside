@@ -8,6 +8,7 @@ import RentalPage from '@/pages/RentalPage';
 import GuestBerthPage from '@/pages/GuestBerthPage';
 import MembershipPage from '@/pages/MembershipPage';
 import NewsPage from '@/pages/NewsPage';
+import NewsArticlePage from '@/pages/NewsArticlePage';
 import AboutPage from '@/pages/AboutPage';
 import GroupPage from '@/pages/GroupPage';
 import BoardPage from '@/pages/BoardPage';
@@ -26,6 +27,7 @@ function App() {
             <Route path="/gjestebrygge" element={<GuestBerthPage />} />
             <Route path="/medlemskap" element={<MembershipPage />} />
             <Route path="/nyheter" element={<NewsPage />} />
+            <Route path="/nyheter/:slug" element={<NewsArticlePage />} />
             <Route path="/om-oss" element={<AboutPage />} />
             <Route path="/om-oss/styret" element={<BoardPage />} />
             <Route path="/om-oss/:groupSlug" element={<GroupPage />} />
