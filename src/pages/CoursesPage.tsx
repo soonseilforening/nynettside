@@ -1,18 +1,26 @@
-import { GraduationCap, Clock, Users, Tag, ArrowUpRight } from 'lucide-react';
+import { GraduationCap, Clock, Users, Tag, ArrowUpRight, AlertCircle } from 'lucide-react';
 import PageHeader from '@/components/PageHeader';
-import { courses, externalLinks } from '@/siteConfig';
+import { courses, externalLinks, siteConfig } from '@/siteConfig';
 
 export default function CoursesPage() {
   return (
     <>
       <PageHeader
-        eyebrow="Seilkurs"
+        eyebrow="Aktiviteter · Seilkurs"
         title="Seilkurs for alle aldre og nivåer"
-        description="Vi tilbyr kurs fra Optimist for de yngste til kjølbåtkurs for voksne. Våre instruktører er erfarne seilere som sørger for trygg og lærerik opplevelse på vannet."
+        description="Vi arrangerer egne nybegynnerkurs for barn og unge, seiltrening med instruktør for viderekommende og regattaseilere, samt LadiesSailing for damer i alle aldre."
       />
 
       <section className="section-py bg-white">
         <div className="container-px mx-auto max-w-7xl">
+          {/* Example notice */}
+          <div className="mb-6 flex items-start gap-2.5 rounded-xl bg-amber-50 border border-amber-200 px-4 py-3">
+            <AlertCircle className="h-5 w-5 text-amber-600 shrink-0 mt-0.5" />
+            <p className="text-sm text-amber-800">
+              Kursdetaljer, priser og tidspunkt nedenfor er eksempeltekst og vil bli fylt inn når innhold er klart.
+            </p>
+          </div>
+
           <div className="grid md:grid-cols-2 gap-6">
             {courses.map((course) => (
               <article
@@ -69,7 +77,7 @@ export default function CoursesPage() {
               Spørsmål om kurs?
             </h3>
             <p className="mt-2 text-sm text-slate-600 max-w-xl mx-auto">
-              Kontakt oss på kontoret@soonsf.no for mer informasjon om kurs, utstyr og påmelding.
+              Kontakt oss på {siteConfig.email} for mer informasjon om kurs, utstyr og påmelding.
             </p>
           </div>
         </div>

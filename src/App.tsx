@@ -6,6 +6,7 @@ import ActivitiesPage from '@/pages/ActivitiesPage';
 import CoursesPage from '@/pages/CoursesPage';
 import RentalPage from '@/pages/RentalPage';
 import GuestBerthPage from '@/pages/GuestBerthPage';
+import MembershipPage from '@/pages/MembershipPage';
 import NewsPage from '@/pages/NewsPage';
 import AboutPage from '@/pages/AboutPage';
 
@@ -18,9 +19,10 @@ function App() {
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/aktiviteter" element={<ActivitiesPage />} />
-            <Route path="/seilkurs" element={<CoursesPage />} />
-            <Route path="/utleie" element={<RentalPage />} />
+            <Route path="/aktiviteter/seilkurs" element={<CoursesPage />} />
+            <Route path="/utleielokale" element={<RentalPage />} />
             <Route path="/gjestebrygge" element={<GuestBerthPage />} />
+            <Route path="/medlemskap" element={<MembershipPage />} />
             <Route path="/nyheter" element={<NewsPage />} />
             <Route path="/om-oss" element={<AboutPage />} />
           </Routes>

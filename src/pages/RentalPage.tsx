@@ -1,4 +1,4 @@
-import { Building2, Check, ArrowRight, Users, Tag } from 'lucide-react';
+import { Building2, Check, ArrowRight, Users, Tag, AlertCircle } from 'lucide-react';
 import PageHeader from '@/components/PageHeader';
 import { venueInfo, siteConfig } from '@/siteConfig';
 
@@ -6,13 +6,21 @@ export default function RentalPage() {
   return (
     <>
       <PageHeader
-        eyebrow="Utleie av lokalet"
-        title="Lei klubbhuset i Son"
-        description="Vårt klubbhus ved havna er perfekt for kurs, selskap, møter og arrangementer – med utsikt over Oslofjorden."
+        eyebrow="Utleielokale"
+        title="Lei klubbhuset Neptun i Son"
+        description="Vårt klubbhus ved havna passer for kurs, selskap, møter og arrangementer – med utsikt over Oslofjorden."
       />
 
       <section className="section-py bg-white">
         <div className="container-px mx-auto max-w-7xl">
+          {/* Example notice */}
+          <div className="mb-6 flex items-start gap-2.5 rounded-xl bg-amber-50 border border-amber-200 px-4 py-3">
+            <AlertCircle className="h-5 w-5 text-amber-600 shrink-0 mt-0.5" />
+            <p className="text-sm text-amber-800">
+              Kapasitet, fasiliteter og priser nedenfor er eksempeltekst og vil bli fylt inn når innhold er klart.
+            </p>
+          </div>
+
           <div className="grid lg:grid-cols-2 gap-10 items-start">
             <div>
               <span className="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-[#0C1C8C] text-white">

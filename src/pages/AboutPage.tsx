@@ -1,46 +1,38 @@
-import { MapPin, Mail, Users, Anchor, Trophy, Calendar, ClipboardList, FolderArchive, ArrowUpRight } from 'lucide-react';
+import { MapPin, Mail, Users, Calendar, ClipboardList, FolderArchive, Trophy, Anchor, ArrowUpRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import PageHeader from '@/components/PageHeader';
-import { siteConfig, quickLinks } from '@/siteConfig';
+import { siteConfig, quickLinks, aboutText } from '@/siteConfig';
 
 const iconMap = { Trophy, Anchor, ClipboardList, FolderArchive } as const;
 
 const stats = [
-  { value: '90+', label: 'år med seilglede', icon: Calendar },
-  { value: '120', label: 'aktive medlemmer', icon: Users },
-  { value: '4', label: 'ukentlige seilaser', icon: Anchor },
-  { value: '1934', label: 'stiftet', icon: Trophy },
+  { value: '1919', label: 'stiftet 18. februar', icon: Calendar },
+  { value: '400', label: 'ca. medlemmer', icon: Users },
+  { value: '100+', label: 'år med seilglede', icon: Trophy },
 ];
 
 export default function AboutPage() {
   return (
     <>
       <PageHeader
-        eyebrow="Om oss / Kontakt"
+        eyebrow="Om oss"
         title="Soon Seilforening"
-        description="En aktiv seilforening i Son ved Oslofjorden – for seilere i alle aldre, fra Optimist-jolle til kjølbåt."
+        description="En frivillig ideell organisasjon for seilere i alle aldre i Son ved Oslofjorden."
       />
 
       <section className="section-py bg-white">
         <div className="container-px mx-auto max-w-7xl">
-          {/* About text */}
-          <div className="max-w-2xl">
-            <h2 className="font-display text-2xl font-700 text-slate-900">
-              Om foreningen
-            </h2>
-            <p className="mt-4 text-slate-600 leading-relaxed">
-              Soon Seilforening ble stiftet i 1934 og er en av de eldste seilforeningene
-              rundt Oslofjorden. Vi er en felleskapdrevet klubb med fokus på seilglede,
-              inkludering og aktivitet på vannet for alle aldre.
-            </p>
-            <p className="mt-4 text-slate-600 leading-relaxed">
-              Vi arrangerer ukentlige seilaser, kurs for nybegynnere og viderekomne,
-              regattaer og sosiale arrangementer gjennom hele sesongen. Vårt klubbhus
-              og havneområde i Son er samlingspunkt for medlemmer og gjester.
-            </p>
+          {/* About text from content/tekster/om-oss.txt */}
+          <div className="max-w-2xl space-y-4">
+            {aboutText.paragraphs.map((p, i) => (
+              <p key={i} className="text-slate-600 leading-relaxed">
+                {p}
+              </p>
+            ))}
           </div>
 
           {/* Stats */}
-          <div className="mt-12 grid grid-cols-2 lg:grid-cols-4 gap-4">
+          <div className="mt-12 grid grid-cols-1 sm:grid-cols-3 gap-4">
             {stats.map((s) => {
               const Icon = s.icon;
               return (
@@ -58,7 +50,7 @@ export default function AboutPage() {
             })}
           </div>
 
-          {/* Contact */}
+          {/* Contact + Quick links */}
           <div className="mt-14 grid lg:grid-cols-2 gap-10">
             <div className="rounded-2xl border border-slate-200 bg-slate-50 p-6 sm:p-8">
               <h2 className="font-display text-xl font-700 text-slate-900">
@@ -118,22 +110,38 @@ export default function AboutPage() {
               <ul className="mt-5 space-y-3">
                 {quickLinks.map((link) => {
                   const Icon = iconMap[link.icon];
+                  const isExternal = link.href.startsWith('http');
                   return (
                     <li key={link.id}>
-                      <a
-                        href={link.href}
-                        target={link.href.startsWith('http') ? '_blank' : undefined}
-                        rel={link.href.startsWith('http') ? 'noopener noreferrer' : undefined}
-                        className="group flex items-center gap-3 rounded-xl border border-slate-200 p-3 hover:border-[#0C1C8C]/30 hover:bg-slate-50 transition-colors"
-                      >
-                        <span className="inline-flex h-9 w-9 items-center justify-center rounded-lg bg-[#0C1C8C] text-white">
-                          <Icon className="h-4 w-4" />
-                        </span>
-                        <span className="flex-1 text-sm font-600 text-slate-700">
-                          {link.label}
-                        </span>
-                        <ArrowUpRight className="h-4 w-4 text-slate-400 group-hover:text-[#0C1C8C] transition-colors" />
-                      </a>
+                      {isExternal ? (
+                        <a
+                          href={link.href}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="group flex items-center gap-3 rounded-xl border border-slate-200 p-3 hover:border-[#0C1C8C]/30 hover:bg-slate-50 transition-colors"
+                        >
+                          <span className="inline-flex h-9 w-9 items-center justify-center rounded-lg bg-[#0C1C8C] text-white">
+                            <Icon className="h-4 w-4" />
+                          </span>
+                          <span className="flex-1 text-sm font-600 text-slate-700">
+                            {link.label}
+                          </span>
+                          <ArrowUpRight className="h-4 w-4 text-slate-400 group-hover:text-[#0C1C8C] transition-colors" />
+                        </a>
+                      ) : (
+                        <Link
+                          to={link.href}
+                          className="group flex items-center gap-3 rounded-xl border border-slate-200 p-3 hover:border-[#0C1C8C]/30 hover:bg-slate-50 transition-colors"
+                        >
+                          <span className="inline-flex h-9 w-9 items-center justify-center rounded-lg bg-[#0C1C8C] text-white">
+                            <Icon className="h-4 w-4" />
+                          </span>
+                          <span className="flex-1 text-sm font-600 text-slate-700">
+                            {link.label}
+                          </span>
+                          <ArrowUpRight className="h-4 w-4 text-slate-400 group-hover:text-[#0C1C8C] transition-colors" />
+                        </Link>
+                      )}
                     </li>
                   );
                 })}

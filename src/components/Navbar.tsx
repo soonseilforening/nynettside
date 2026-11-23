@@ -1,11 +1,12 @@
 import { useEffect, useState } from 'react';
 import { Link, NavLink, useLocation } from 'react-router-dom';
-import { Menu, X } from 'lucide-react';
-import { navLinks, externalLinks, siteConfig } from '@/siteConfig';
+import { Menu, X, ChevronDown } from 'lucide-react';
+import { navLinks, externalLinks, siteConfig, type NavLink as NavItemType } from '@/siteConfig';
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+  const [dropdown, setDropdown] = useState<string | null>(null);
   const location = useLocation();
 
   useEffect(() => {
@@ -15,7 +16,6 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
-  // Lock body scroll when mobile menu is open
   useEffect(() => {
     document.body.style.overflow = open ? 'hidden' : '';
     return () => {
@@ -23,22 +23,37 @@ export default function Navbar() {
     };
   }, [open]);
 
-  // Close mobile menu on route change & scroll to top
   useEffect(() => {
     setOpen(false);
+    setDropdown(null);
     window.scrollTo(0, 0);
   }, [location.pathname]);
 
-  // On the home page the hero is dark, so transparent works. On sub-pages, always use solid bg.
   const isHome = location.pathname === '/';
   const useSolid = scrolled || !isHome;
+
+  const linkClass = (isActive: boolean) =>
+    `relative px-4 py-2 text-sm font-500 transition-colors rounded-lg ${
+      isActive
+        ? isHome && !useSolid
+          ? 'text-white bg-white/15'
+          : 'text-[#0C1C8C] bg-[#0C1C8C]/8'
+        : isHome && !useSolid
+          ? 'text-white/90 hover:text-white hover:bg-white/10'
+          : 'text-slate-700 hover:text-[#0C1C8C] hover:bg-slate-100'
+    }`;
+
+  const mobileLinkClass = (isActive: boolean) =>
+    `block rounded-lg px-4 py-3 text-base font-500 transition-colors ${
+      isActive
+        ? 'text-[#0C1C8C] bg-[#0C1C8C]/8'
+        : 'text-slate-700 hover:bg-slate-100 hover:text-[#0C1C8C]'
+    }`;
 
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        useSolid
-          ? 'bg-white shadow-md'
-          : 'bg-transparent'
+        useSolid ? 'bg-white shadow-md' : 'bg-transparent'
       }`}
     >
       <nav className="container-px mx-auto max-w-7xl">
@@ -54,27 +69,64 @@ export default function Navbar() {
 
           {/* Desktop nav */}
           <ul className="hidden lg:flex items-center gap-1">
-            {navLinks.map((link) => (
-              <li key={link.path}>
-                <NavLink
-                  to={link.path}
-                  end={link.path === '/'}
-                  className={({ isActive }) =>
-                    `relative px-4 py-2 text-sm font-500 transition-colors rounded-lg ${
-                      isActive
-                        ? isHome && !useSolid
-                          ? 'text-white bg-white/15'
-                          : 'text-[#0C1C8C] bg-[#0C1C8C]/8'
-                        : isHome && !useSolid
-                          ? 'text-white/90 hover:text-white hover:bg-white/10'
-                          : 'text-slate-700 hover:text-[#0C1C8C] hover:bg-slate-100'
-                    }`
-                  }
+            {navLinks.map((link) =>
+              link.children ? (
+                <li
+                  key={link.path}
+                  className="relative"
+                  onMouseEnter={() => setDropdown(link.path)}
+                  onMouseLeave={() => setDropdown(null)}
                 >
-                  {link.label}
-                </NavLink>
-              </li>
-            ))}
+                  <NavLink to={link.path} className={({ isActive }) => linkClass(isActive)}>
+                    <span className="inline-flex items-center gap-1">
+                      {link.label}
+                      <ChevronDown className="h-3.5 w-3.5" />
+                    </span>
+                  </NavLink>
+                  {dropdown === link.path && (
+                    <ul className="absolute left-0 top-full pt-1 min-w-[200px]">
+                      <li>
+                        <NavLink
+                          to={link.path}
+                          end
+                          className={({ isActive }) =>
+                            `block rounded-lg px-4 py-2.5 text-sm font-500 bg-white shadow-md border border-slate-100 transition-colors ${
+                              isActive
+                                ? 'text-[#0C1C8C] bg-[#0C1C8C]/8'
+                                : 'text-slate-700 hover:bg-slate-50 hover:text-[#0C1C8C]'
+                            }`
+                          }
+                        >
+                          {link.label} (oversikt)
+                        </NavLink>
+                      </li>
+                      {link.children.map((child) => (
+                        <li key={child.path}>
+                          <NavLink
+                            to={child.path}
+                            className={({ isActive }) =>
+                              `block rounded-lg px-4 py-2.5 text-sm font-500 bg-white shadow-md border border-slate-100 border-t-0 transition-colors ${
+                                isActive
+                                  ? 'text-[#0C1C8C] bg-[#0C1C8C]/8'
+                                  : 'text-slate-700 hover:bg-slate-50 hover:text-[#0C1C8C]'
+                              }`
+                            }
+                          >
+                            {child.label}
+                          </NavLink>
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+                </li>
+              ) : (
+                <li key={link.path}>
+                  <NavLink to={link.path} end={link.path === '/'} className={({ isActive }) => linkClass(isActive)}>
+                    {link.label}
+                  </NavLink>
+                </li>
+              )
+            )}
           </ul>
 
           {/* Desktop CTA */}
@@ -95,9 +147,7 @@ export default function Navbar() {
             aria-label="Meny"
             aria-expanded={open}
             className={`lg:hidden inline-flex h-10 w-10 items-center justify-center rounded-lg transition-colors ${
-              useSolid
-                ? 'text-slate-800 hover:bg-slate-100'
-                : 'text-white hover:bg-white/10'
+              useSolid ? 'text-slate-800 hover:bg-slate-100' : 'text-white hover:bg-white/10'
             }`}
           >
             {open ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
@@ -108,25 +158,35 @@ export default function Navbar() {
       {/* Mobile menu */}
       <div
         className={`lg:hidden overflow-hidden bg-white transition-[max-height,opacity] duration-300 ease-out ${
-          open ? 'max-h-[560px] opacity-100 border-t border-slate-100' : 'max-h-0 opacity-0'
+          open ? 'max-h-[640px] opacity-100 border-t border-slate-100' : 'max-h-0 opacity-0'
         }`}
       >
         <ul className="container-px mx-auto max-w-7xl flex flex-col py-4 gap-1">
-          {navLinks.map((link) => (
+          {navLinks.map((link: NavItemType) => (
             <li key={link.path}>
-              <NavLink
-                to={link.path}
-                end={link.path === '/'}
-                className={({ isActive }) =>
-                  `block rounded-lg px-4 py-3 text-base font-500 transition-colors ${
-                    isActive
-                      ? 'text-[#0C1C8C] bg-[#0C1C8C]/8'
-                      : 'text-slate-700 hover:bg-slate-100 hover:text-[#0C1C8C]'
-                  }`
-                }
-              >
+              <NavLink to={link.path} end={link.path === '/'} className={({ isActive }) => mobileLinkClass(isActive)}>
                 {link.label}
               </NavLink>
+              {link.children && (
+                <ul className="ml-4 border-l-2 border-slate-100 mt-1 mb-1">
+                  {link.children.map((child) => (
+                    <li key={child.path}>
+                      <NavLink
+                        to={child.path}
+                        className={({ isActive }) =>
+                          `block rounded-lg pl-6 pr-4 py-2.5 text-sm font-500 transition-colors ${
+                            isActive
+                              ? 'text-[#0C1C8C] bg-[#0C1C8C]/8'
+                              : 'text-slate-600 hover:bg-slate-50 hover:text-[#0C1C8C]'
+                          }`
+                        }
+                      >
+                        {child.label}
+                      </NavLink>
+                    </li>
+                  ))}
+                </ul>
+              )}
             </li>
           ))}
           <li className="pt-2">

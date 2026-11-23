@@ -28,8 +28,8 @@ export default function Footer() {
               <span className="font-display text-lg font-600">{siteConfig.name}</span>
             </div>
             <p className="mt-4 text-sm leading-relaxed text-white/70 max-w-xs">
-              En aktiv seilforening i Son ved Oslofjorden – for seilere i alle aldre,
-              fra Optimist-jolle til kjølbåt.
+              En frivillig ideell seilforening i Son ved Oslofjorden – for seilere i alle
+              aldre, fra jolle til kjølbåt.
             </p>
             <ul className="mt-5 space-y-2.5 text-sm">
               <li className="flex items-center gap-2.5">
@@ -111,14 +111,12 @@ export default function Footer() {
                 <Instagram className="h-5 w-5" />
               </a>
             </div>
-            <a
-              href={externalLinks.rubicMembership}
-              target="_blank"
-              rel="noopener noreferrer"
+            <Link
+              to="/medlemskap"
               className="mt-5 inline-flex items-center justify-center gap-2 rounded-xl bg-white px-5 py-2.5 text-sm font-600 text-[#0C1C8C] hover:bg-white/90 transition-colors"
             >
-              Bli medlem (Rubic) <ArrowUpRight className="h-4 w-4" />
-            </a>
+              Bli medlem
+            </Link>
           </div>
         </div>
 

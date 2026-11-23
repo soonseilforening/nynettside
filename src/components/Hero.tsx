@@ -16,16 +16,16 @@ export default function Hero() {
           className="h-full w-full object-cover"
           loading="eager"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-navy-950/80 via-navy-900/65 to-navy-950/85" />
-        <div className="absolute inset-0 bg-gradient-to-r from-navy-950/70 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#0C1C8C]/80 via-[#0C1C8C]/65 to-[#0C1C8C]/85" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#0C1C8C]/70 to-transparent" />
       </div>
 
       {/* Content */}
       <div className="relative container-px mx-auto max-w-7xl w-full pt-24 pb-16 sm:pt-28 sm:pb-20">
         <div className="max-w-2xl">
           <span className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-1.5 text-xs font-500 uppercase tracking-[0.16em] text-white backdrop-blur-sm animate-fade-up">
-            <span className="h-1.5 w-1.5 rounded-full bg-crimson-400 animate-pulse" />
-            Est. 1934 · Son ved Oslofjorden
+            <span className="h-1.5 w-1.5 rounded-full bg-white/80 animate-pulse" />
+            Est. 1919 · Son ved Oslofjorden
           </span>
 
           <h1
@@ -47,16 +47,14 @@ export default function Hero() {
             className="mt-9 flex flex-col sm:flex-row gap-3 sm:gap-4 animate-fade-up"
             style={{ animationDelay: '0.24s' }}
           >
-            <a
-              href={externalLinks.rubicMembership}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2 rounded-xl bg-crimson-500 px-6 py-3.5 text-base font-600 text-white shadow-xl shadow-crimson-500/30 hover:bg-crimson-400 hover:shadow-crimson-500/50 hover:-translate-y-0.5 active:translate-y-0 transition-all duration-200"
-            >
-              Bli medlem (Rubic)
-            </a>
             <Link
-              to="/seilkurs"
+              to="/medlemskap"
+              className="inline-flex items-center justify-center gap-2 rounded-xl bg-white px-6 py-3.5 text-base font-600 text-[#0C1C8C] shadow-xl hover:bg-white/90 hover:-translate-y-0.5 active:translate-y-0 transition-all duration-200"
+            >
+              Bli medlem
+            </Link>
+            <Link
+              to="/aktiviteter/seilkurs"
               className="inline-flex items-center justify-center gap-2 rounded-xl border border-white/30 bg-white/10 px-6 py-3.5 text-base font-600 text-white backdrop-blur-sm hover:bg-white/20 hover:border-white/50 transition-all duration-200"
             >
               Se seilkurs
@@ -78,9 +76,9 @@ export default function Hero() {
             style={{ animationDelay: '0.32s' }}
           >
             {[
-              { value: '90+', label: 'år med seilglede' },
-              { value: '120', label: 'aktive medlemmer' },
-              { value: '4', label: 'ukentlige seilaser' },
+              { value: '100+', label: 'år med seilglede' },
+              { value: '400', label: 'ca. medlemmer' },
+              { value: '1919', label: 'stiftet' },
             ].map((s) => (
               <div key={s.label} className="flex flex-col">
                 <span className="font-display text-2xl sm:text-3xl font-700 text-white">{s.value}</span>

@@ -1,4 +1,5 @@
-import { Newspaper, ArrowUpRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { Newspaper, AlertCircle } from 'lucide-react';
 import PageHeader from '@/components/PageHeader';
 import { newsItems } from '@/siteConfig';
 
@@ -8,11 +9,19 @@ export default function NewsPage() {
       <PageHeader
         eyebrow="Nyheter"
         title="Nyheter fra foreningen"
-        description="Hold deg oppdatert på hva som skjer i Soon Seilforening – fra regattaer og kurs til havnearbeid og medlemsnytt."
+        description="Hold deg oppdatert på hva som skjer i Soon Seilforening."
       />
 
       <section className="section-py bg-white">
         <div className="container-px mx-auto max-w-7xl">
+          {/* Example notice */}
+          <div className="mb-6 flex items-start gap-2.5 rounded-xl bg-amber-50 border border-amber-200 px-4 py-3">
+            <AlertCircle className="h-5 w-5 text-amber-600 shrink-0 mt-0.5" />
+            <p className="text-sm text-amber-800">
+              Nyhetene nedenfor er eksempeltekst og vil bli fylt inn når innhold er klart.
+            </p>
+          </div>
+
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {newsItems.map((item) => (
               <article
@@ -38,9 +47,6 @@ export default function NewsPage() {
                   <p className="mt-2 text-sm text-slate-600 leading-relaxed flex-1">
                     {item.excerpt}
                   </p>
-                  <span className="mt-4 inline-flex items-center gap-1.5 text-sm font-600 text-[#0C1C8C]">
-                    Les mer <ArrowUpRight className="h-4 w-4" />
-                  </span>
                 </div>
               </article>
             ))}
