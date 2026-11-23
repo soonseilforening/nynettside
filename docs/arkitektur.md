@@ -52,7 +52,7 @@ flowchart TB
 | Del | Rolle |
 |---|---|
 | Bolt.new | Bygger første versjon av nettsiden med AI og er koblet til GitHub |
-| GitHub | Eneste sted koden ligger. Organisasjonen `soonseilforening` eier repoet `nettside` |
+| GitHub | Eneste sted koden ligger. Organisasjonen `soonseilforening` eier repoet `nynettside` |
 | Netlify | Bygger og publiserer nettsiden automatisk ved hver commit til `main` |
 | soonseilforening.no | Domenet pekes til Netlify først ved lansering. Wix-siden er i drift fram til da |
 
