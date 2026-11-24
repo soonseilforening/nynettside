@@ -1,7 +1,16 @@
 import { useParams, Link } from 'react-router-dom';
 import { Users, CalendarDays, MapPin, Mail, ArrowLeft, AlertCircle } from 'lucide-react';
 import PageHeader from '@/components/PageHeader';
+import RubicActivities from '@/components/RubicActivities';
 import { groups } from '@/siteConfig';
+import { rubicGroups } from '@/config/rubicGroups';
+
+const groupSlugToRubicId: Record<string, string> = {
+  jolle: 'jolle',
+  'kjolbat-sport': 'kjolbat',
+  'ladies-sailing': 'ladies',
+  drake: 'kjolbat',
+};
 
 export default function GroupPage() {
   const { groupSlug } = useParams<{ groupSlug: string }>();
@@ -86,6 +95,25 @@ export default function GroupPage() {
                 <p className="mt-3 text-slate-600 leading-relaxed">{group.sportsboatText}</p>
               </div>
             )}
+
+            {/* Upcoming activities from Rubic */}
+            {(() => {
+              const rubicId = groupSlugToRubicId[group.slug];
+              const rubicGroup = rubicGroups.find((g) => g.id === rubicId);
+              if (!rubicGroup) return null;
+              return (
+                <div>
+                  <h2 className="font-display text-xl font-700 text-slate-900 mb-4">
+                    Kommende aktiviteter
+                  </h2>
+                  <RubicActivities
+                    token={rubicGroup.token}
+                    variant="full"
+                    pageSize={10}
+                  />
+                </div>
+              );
+            })()}
 
             {/* Contacts */}
             <div>
