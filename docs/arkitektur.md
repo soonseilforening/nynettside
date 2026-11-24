@@ -168,6 +168,8 @@ Nye beslutninger føres inn i `docs/beslutninger.md`.
 
 Sjekklisten for lansering ligger i `docs/lansering.md`.
 
+Utleieskjemaet er beskrevet i `docs/utleie.md`.
+
 ## Åpne spørsmål
 
 - Hvilket innhold skal flyttes fra dagens Wix-side til de nye sidene?

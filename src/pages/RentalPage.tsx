@@ -1,6 +1,7 @@
 import { useState } from 'react';
-import { Building2, Check, ArrowRight, Users, Clock, Calendar, Wrench, Wine, Info, Mail, X, ChevronLeft, ChevronRight } from 'lucide-react';
+import { Building2, Check, Users, Clock, Calendar, Wrench, Wine, Info, X, ChevronLeft, ChevronRight } from 'lucide-react';
 import PageHeader from '@/components/PageHeader';
+import RentalRequestForm from '@/components/RentalRequestForm';
 import { venueInfo, siteConfig } from '@/siteConfig';
 
 export default function RentalPage() {
@@ -206,23 +207,22 @@ export default function RentalPage() {
       {/* Contact / booking request */}
       <section className="section-py bg-slate-50">
         <div className="container-px mx-auto max-w-3xl">
-          <div className="rounded-2xl border border-slate-200 bg-white p-6 sm:p-8 text-center">
-            <h2 className="font-display text-xl font-700 text-slate-900">Send forespørsel</h2>
+          <div className="text-center">
+            <h2 id="foresporsel" className="font-display text-xl font-700 text-slate-900">Send forespørsel</h2>
             <p className="mt-2 text-sm text-slate-600">
-              Kontakt oss for å sjekke tilgjengelighet og boke lokalet. Bookingskjemaet kommer snart – foreløpig sender du en e-post.
-            </p>
-            <a
-              href={`mailto:${venueInfo.contactEmail}?subject=Forespørsel om leie av ${venueInfo.name}`}
-              className="mt-6 inline-flex items-center justify-center gap-2 rounded-xl bg-[#0C1C8C] px-6 py-3.5 text-sm font-600 text-white shadow-lg hover:bg-[#0C1C8C]/90 hover:-translate-y-0.5 transition-all duration-200"
-            >
-              <Mail className="h-4 w-4" />
-              Send e-post til {venueInfo.contactEmail}
-              <ArrowRight className="h-4 w-4" />
-            </a>
-            <p className="mt-4 text-xs text-slate-400">
-              {siteConfig.address}
+              Velg leietype og dato, så ser du pris og periode med en gang. Vi svarer på e-post om datoen er ledig.
             </p>
           </div>
+          <div className="mt-6">
+            <RentalRequestForm contactEmail={venueInfo.contactEmail} />
+          </div>
+          <p className="mt-4 text-center text-sm text-slate-500">
+            Spørsmål? Skriv til{' '}
+            <a className="text-[#0C1C8C] underline" href={`mailto:${venueInfo.contactEmail}?subject=Spørsmål om leie av ${venueInfo.name}`}>
+              {venueInfo.contactEmail}
+            </a>
+            . {siteConfig.address}
+          </p>
         </div>
       </section>
 

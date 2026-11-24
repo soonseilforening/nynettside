@@ -331,7 +331,7 @@ export const venueInfo: VenueInfo = {
   intro: [
     'Vårt lokale Neptun leies ut til selskaper, møter og konferanser. Foreningen bruker lokalet selv et par helger i året, men ellers er det tilgjengelig for utleie. Det store og åpne lokalet ble totalrenovert i januar 2021 og ligger på bryggen med flott utsikt utover havnen.',
     'Hos oss kan du tilberede mat og ha med egen drikke.',
-    'Et stort og moderne kjøkken hører til lokalet og ble pusset opp i 2020. Se vår bookingkalender om din ønskede dato er ledig, og send oss en forespørsel via skjemaet nedenfor.',
+    'Et stort og moderne kjøkken hører til lokalet og ble pusset opp i 2020. Send oss en forespørsel via skjemaet nedenfor, så svarer vi om ønsket dato er ledig.',
     'Kontoret er kun bemannet én dag per uke. Det kan derfor ta noen dager før din forespørsel blir besvart.',
   ],
   aboutParagraphs: [
