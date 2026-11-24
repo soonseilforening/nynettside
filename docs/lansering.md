@@ -1,6 +1,6 @@
 # Sjekkliste for lansering
 
-Sist oppdatert: 23. november 2026
+Sist oppdatert: 24. november 2026
 
 Ting som må gjøres når den nye nettsiden skal erstatte Wix-siden på soonseilforening.no. Spør alltid styret/ansvarlig før DNS endres.
 
@@ -21,7 +21,9 @@ Ting som må gjøres når den nye nettsiden skal erstatte Wix-siden på soonseil
 
 ## Teknisk
 
-- Miljøvariablene `VITE_SANITY_PROJECT_ID` og `VITE_SANITY_DATASET` er lagt inn i Netlify.
+- Miljøvariablene `VITE_SANITY_PROJECT_ID` og `VITE_SANITY_DATASET` er lagt inn i Netlify (gjort 24.11.2026).
+- Hvis Netlifys innloggingskrav for besøkende (Visitor access / team login) fortsatt er på, må det skrus av.
+- `https://soonseilforening.netlify.app` er lagt inn som CORS-origin i Sanity (for testversjonen).
 - `https://www.soonseilforening.no` og `https://soonseilforening.no` er lagt inn som CORS-origin i Sanity.
 - Fjern CORS-jokertegnet for Bolt (`*.local-credentialless.webcontainer-api.io`) hvis Bolt ikke brukes lenger.
 - Domenet flyttes fra Wix til Netlify (DNS). Dette kan ikke angres raskt, så det avtales på forhånd.
