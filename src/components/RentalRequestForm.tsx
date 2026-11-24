@@ -165,29 +165,45 @@ export default function RentalRequestForm({ contactEmail }: Props) {
         )}
       </div>
 
+      <div>
+        <label htmlFor="rental-name" className={labelClass}>
+          Fullt navn
+        </label>
+        <input
+          {...aria('name')}
+          className={inputClass}
+          autoComplete="name"
+          placeholder="Fornavn Etternavn"
+          value={form.name}
+          onChange={(e) => set('name', e.target.value)}
+        />
+        {fieldError('name')}
+      </div>
+
       <div className="grid gap-5 sm:grid-cols-2">
         <div>
-          <label htmlFor="rental-name" className={labelClass}>
-            Navn
+          <label htmlFor="rental-email" className={labelClass}>
+            E-post
           </label>
-          <input {...aria('name')} className={inputClass} autoComplete="name" value={form.name} onChange={(e) => set('name', e.target.value)} />
-          {fieldError('name')}
+          <input {...aria('email')} type="email" className={inputClass} autoComplete="email" value={form.email} onChange={(e) => set('email', e.target.value)} />
+          {fieldError('email')}
         </div>
         <div>
           <label htmlFor="rental-phone" className={labelClass}>
             Telefon
           </label>
-          <input {...aria('phone')} type="tel" className={inputClass} autoComplete="tel" value={form.phone} onChange={(e) => set('phone', e.target.value)} />
+          <input
+            {...aria('phone')}
+            type="tel"
+            inputMode="tel"
+            className={inputClass}
+            autoComplete="tel"
+            placeholder="f.eks. 900 00 000"
+            value={form.phone}
+            onChange={(e) => set('phone', e.target.value)}
+          />
           {fieldError('phone')}
         </div>
-      </div>
-
-      <div>
-        <label htmlFor="rental-email" className={labelClass}>
-          E-post
-        </label>
-        <input {...aria('email')} type="email" className={inputClass} autoComplete="email" value={form.email} onChange={(e) => set('email', e.target.value)} />
-        {fieldError('email')}
       </div>
 
       <div>

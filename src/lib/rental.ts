@@ -104,13 +104,14 @@ export function validateRentalRequest(input: RentalRequestInput, today: string):
     };
   }
 
-  if (input.name.trim().length < 2) return { ok: false, field: 'name', message: 'Skriv inn navn.' };
+  if (input.name.trim().split(/\s+/).length < 2) return { ok: false, field: 'name', message: 'Skriv inn fullt navn (fornavn og etternavn).' };
   if (input.address.trim().length < 3) return { ok: false, field: 'address', message: 'Skriv inn adresse.' };
   if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(input.email.trim())) {
     return { ok: false, field: 'email', message: 'Skriv inn en gyldig e-postadresse.' };
   }
-  if (input.phone.replace(/[\s+()-]/g, '').length < 8) {
-    return { ok: false, field: 'phone', message: 'Skriv inn telefonnummer.' };
+  const phoneDigits = input.phone.replace(/\D/g, '');
+  if (!/^\+?[\d\s()-]+$/.test(input.phone.trim()) || phoneDigits.length < 8 || phoneDigits.length > 15) {
+    return { ok: false, field: 'phone', message: 'Skriv inn et gyldig telefonnummer (minst 8 siffer).' };
   }
   if (input.purpose.trim().length < 3) return { ok: false, field: 'purpose', message: 'Fortell kort hva lokalet skal brukes til.' };
   const participants = Number(input.participants);
