@@ -1,0 +1,10 @@
+# Byggeinnstillinger for Netlify. Netlify leser denne filen automatisk,
+# så innstillingene trenger ikke fylles inn i Netlify-grensesnittet.
+# Miljøvariabler (VITE_SANITY_*) legges fortsatt inn i Netlify, se docs/sanity.md.
+
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+[build.environment]
+  NODE_VERSION = "20"
