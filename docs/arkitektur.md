@@ -52,8 +52,8 @@ flowchart TB
 | Del | Rolle |
 |---|---|
 | Bolt.new | Bygde første versjon av nettsiden (avsluttet 23.11.2026). Videre endringer gjøres av Claude direkte i GitHub |
-| GitHub | Eneste sted koden ligger. Organisasjonen `soonseilforening` eier repoet `nynettside` |
-| Netlify | Bygger og publiserer nettsiden automatisk ved hver commit til `main` |
+| GitHub | Eneste sted koden ligger. Organisasjonen `soonseilforening` eier repoet `nynettside`, som er offentlig. Endringer gjøres i egne grener og slås sammen via pull request |
+| Netlify | Bygger og publiserer nettsiden automatisk ved hver commit til `main`. Prosjekt `soonseilforening` → https://soonseilforening.netlify.app. Innstillinger i `netlify.toml`, miljøvariabler i Netlify. Eies av kontoret@soonsf.no (gratisplan) |
 | soonseilforening.no | Domenet pekes til Netlify først ved lansering. Wix-siden er i drift fram til da |
 
 ### 3. Data og innhold

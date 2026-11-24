@@ -4,6 +4,9 @@ Her føres alle beslutninger om nettsiden og de digitale løsningene, med nyeste
 
 | Dato | Beslutning | Begrunnelse |
 |---|---|---|
+| 2026-11-24 | GitHub-repoet `nynettside` er offentlig | Netlifys gratisplan bygger ikke private repoer som eies av en organisasjon. Repoet inneholder ingen hemmeligheter. Styrelisten i `src/siteConfig.ts` står allerede på nettsiden |
+| 2026-11-24 | Netlify-prosjektet `soonseilforening` (team «Soon Seilforening's team», kontoret@soonsf.no) bygger fra `main` | Byggeinnstillingene ligger i `netlify.toml`. Pull requests får egen forhåndsvisning |
+| 2026-11-24 | Rubic-aktiviteter hentes med egen kode, ikke Rubics embed-skript | Embed-skriptet virker ikke med sidebytte uten ny lasting. Se `docs/integrasjoner/rubic.md` |
 | 2026-11-23 | Videre utvikling gjøres av Claude direkte i GitHub, ikke i Bolt | Gratiskvoten i Bolt er brukt opp. Det er planlagt steg 2 i arkitekturen, og det koster ingenting ekstra |
 | 2026-11-23 | Netlify (gratisplan) brukes som forhåndsvisning på en netlify.app-adresse før lansering | Erstatter forhåndsvisningen i Bolt. Domenet berøres ikke |
 | 2026-11-23 | Testversjonen har «Under arbeid»-stripe og blokkerer søkemotorer | Siden er offentlig på netlify.app, men har fortsatt eksempeltekst. Fjernes ved lansering (`docs/lansering.md`) |
