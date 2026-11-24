@@ -12,7 +12,13 @@ export default async () => {
     return;
   }
   const res = await fetch(`${url}/rest/v1/rental_requests?select=id&limit=1`, {
-    headers: { apikey: key, Authorization: `Bearer ${key}` },
+    headers: supabaseAuthHeaders(key),
   });
   console.log('Supabase keepalive', res.status);
 };
+
+// Supabase har to typer nøkler: nye «secret keys» (sb_secret_...) og eldre «service_role» (JWT, starter med eyJ).
+// Nye nøkler sendes bare som apikey. Eldre nøkler sendes også som Authorization.
+function supabaseAuthHeaders(key: string): Record<string, string> {
+  return key.startsWith('eyJ') ? { apikey: key, Authorization: `Bearer ${key}` } : { apikey: key };
+}

@@ -47,8 +47,8 @@ Kopi av skriptet: `apps-script/neptun-foresporsel.gs`. Endres skriptet i regnear
 ## Miljøvariabler i Netlify (alle som Secret)
 | Navn | Hvor du finner verdien |
 |---|---|
-| `SUPABASE_URL` | Supabase → Project Settings → API → Project URL |
-| `SUPABASE_SERVICE_ROLE_KEY` | Supabase → Project Settings → API → `service_role` |
+| `SUPABASE_URL` | Supabase → Project Settings → Data API → Project URL (`https://<id>.supabase.co`) |
+| `SUPABASE_SERVICE_ROLE_KEY` | Supabase → Project Settings → API Keys → *Secret keys* (`sb_secret_…`). Eldre prosjekter: fanen *Legacy API keys* → `service_role` |
 | `APPS_SCRIPT_URL` | Apps Script → Implementer → Administrer implementeringer → Nettapp-URL |
 | `APPS_SCRIPT_SECRET` | En lang tilfeldig tekst. Samme verdi som skriptegenskapen `NETTSIDE_SECRET` i Apps Script |
 
