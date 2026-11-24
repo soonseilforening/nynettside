@@ -50,12 +50,8 @@ function decodeIfEncoded(html: string): string {
 
 function parseRubicHtml(html: string): RubicActivity[] {
   const decoded = decodeIfEncoded(html);
-  console.debug('[Rubic] raw html:', html);
-  console.debug('[Rubic] decoded html:', decoded);
   const doc = new DOMParser().parseFromString(decoded, 'text/html');
-  const rows = doc.querySelectorAll('tbody tr');
-  console.debug('[Rubic] rows found:', rows.length);
-  return Array.from(rows)
+  return Array.from(doc.querySelectorAll('tbody tr'))
     .map((row) => {
       const cells = row.querySelectorAll('td, th');
       const link = cells[2]?.querySelector('a');
