@@ -43,9 +43,19 @@ export function fetchRubicActivities(token: string, pageSize = 10): Promise<Rubi
   });
 }
 
+function decodeIfEncoded(html: string): string {
+  if (/<tr/i.test(html)) return html;
+  return new DOMParser().parseFromString(html, 'text/html').documentElement.textContent ?? '';
+}
+
 function parseRubicHtml(html: string): RubicActivity[] {
-  const doc = new DOMParser().parseFromString(html, 'text/html');
-  return Array.from(doc.querySelectorAll('tbody tr'))
+  const decoded = decodeIfEncoded(html);
+  console.debug('[Rubic] raw html:', html);
+  console.debug('[Rubic] decoded html:', decoded);
+  const doc = new DOMParser().parseFromString(decoded, 'text/html');
+  const rows = doc.querySelectorAll('tbody tr');
+  console.debug('[Rubic] rows found:', rows.length);
+  return Array.from(rows)
     .map((row) => {
       const cells = row.querySelectorAll('td, th');
       const link = cells[2]?.querySelector('a');
