@@ -71,6 +71,7 @@ export type GroupInfo = {
   contacts?: GroupContact[];
   sportsboatText?: string;
   sportsboatExample?: boolean;
+  rubicGroupIds?: string[];
   example?: boolean;
 };
 
@@ -86,6 +87,7 @@ export const groups: GroupInfo[] = [
     location: '[EKSEMPEL – må fylles inn] Hvor gruppen møtes (klubbhus, brygge, område).',
     contactName: '[EKSEMPEL – må fylles inn] Navn på kontaktperson',
     contactEmail: '[EKSEMPEL – må fylles inn] E-postadresse',
+    rubicGroupIds: ['jolle'],
     example: true,
   },
   {
@@ -106,6 +108,7 @@ export const groups: GroupInfo[] = [
       { role: 'Leder, kjølbåt', name: 'Mads Francke', email: 'kjolbaat@soonsf.no' },
       { role: 'Styremedlem, sportsbåt', name: 'Jonas Alexander Sørlie', email: 'sport@soonsf.no' },
     ],
+    rubicGroupIds: ['kjolbat', 'sportsbat'],
     sportsboatText: '[EKSEMPEL – må fylles inn av gruppeleder for sportsbåt]',
     sportsboatExample: true,
   },
@@ -119,6 +122,7 @@ export const groups: GroupInfo[] = [
     schedule: '[EKSEMPEL – må fylles inn] Når gruppen møtes (ukedag, tidspunkt, sesong).',
     location: '[EKSEMPEL – må fylles inn] Hvor gruppen møtes (klubbhus, brygge, område).',
     contactName: '[EKSEMPEL – må fylles inn] Navn på kontaktperson',
+    rubicGroupIds: ['ladies'],
     contactEmail: '[EKSEMPEL – må fylles inn] E-postadresse',
     example: true,
   },
@@ -132,6 +136,7 @@ export const groups: GroupInfo[] = [
     schedule: '[EKSEMPEL – må fylles inn] Når gruppen møtes (ukedag, tidspunkt, sesong).',
     location: '[EKSEMPEL – må fylles inn] Hvor gruppen møtes (klubbhus, brygge, område).',
     contactName: '[EKSEMPEL – må fylles inn] Navn på kontaktperson',
+    rubicGroupIds: [],
     contactEmail: '[EKSEMPEL – må fylles inn] E-postadresse',
     example: true,
   },
