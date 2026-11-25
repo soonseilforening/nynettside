@@ -4,6 +4,7 @@ Her føres alle beslutninger om nettsiden og de digitale løsningene, med nyeste
 
 | Dato | Beslutning | Begrunnelse |
 |---|---|---|
+| 2026-11-25 | Ny nettside lanseres samtidig med overgangen til Google Workspace, planlagt rundt årsskiftet | Funksjonsadressene på siden (bl.a. nye jolle@ og drake@soonsf.no) skal ligge i Google Workspace, ikke Office 365 |
 | 2026-11-25 | Nettsideansvarlig skriver gruppetekstene selv før styremøtet, i stedet for å be gruppelederne | Nettsiden er eget initiativ og skal forankres i styret først. Gruppelederne sitter i styret og går gjennom tekstene der |
 | 2026-11-24 | Testsiden holdes skjult bak Netlifys innlogging til styremøtet 9. desember 2026 | Siden skal presenteres for styret først, ferdig utfylt. Erstatter beslutningen fra 23.11 om at testversjonen er offentlig |
 | 2026-11-24 | GitHub-repoet `nynettside` er offentlig | Netlifys gratisplan bygger ikke private repoer som eies av en organisasjon. Repoet inneholder ingen hemmeligheter. Styrelisten i `src/siteConfig.ts` står allerede på nettsiden |
