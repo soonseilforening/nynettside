@@ -71,6 +71,10 @@ export type GroupInfo = {
   contacts?: GroupContact[];
   sportsboatText?: string;
   sportsboatExample?: boolean;
+  heroImage?: string;
+  heroAlt?: string;
+  sportsboatImage?: string;
+  sportsboatImageAlt?: string;
   rubicGroupIds?: string[];
   example?: boolean;
 };
@@ -78,6 +82,8 @@ export type GroupInfo = {
 export const groups: GroupInfo[] = [
   {
     slug: 'jolle',
+    heroImage: '/bilder/grupper/jolle.jpg',
+    heroAlt: 'Optimistjoller på rekke under trening, med hvite seil og seilnumre',
     name: 'Jolle',
     shortDescription:
       'Seiling for barn og ungdom fra 7 til 16 år i Optimist og ILCA – fra første tur i båten til regatta.',
@@ -94,6 +100,10 @@ export const groups: GroupInfo[] = [
   },
   {
     slug: 'kjolbat-sport',
+    heroImage: '/bilder/grupper/kjolbat.jpg',
+    heroAlt: 'Kjølbåt i krengning med mannskap i seilerdress under mørke skyer',
+    sportsboatImage: '/bilder/grupper/sportsbat.jpg',
+    sportsboatImageAlt: 'J70-båter med gennaker rundt merket under regatta',
     name: 'Kjølbåt-Sport',
     shortDescription:
       'Onsdagsregattaer vår og høst, medlemsmøter i vinterhalvåret og turer med et sosialt tilsnitt.',
@@ -116,6 +126,8 @@ export const groups: GroupInfo[] = [
   },
   {
     slug: 'ladies-sailing',
+    heroImage: '/bilder/grupper/ladies-sailing.jpg',
+    heroAlt: 'To J70-båter med Ladies Sailing-mannskap på fjorden',
     name: 'Ladies Sailing',
     shortDescription:
       'Seiling for damer i alle aldre og på alle nivåer – på sjøen om sommeren, teori og hygge om vinteren.',
@@ -130,6 +142,8 @@ export const groups: GroupInfo[] = [
   },
   {
     slug: 'drake',
+    heroImage: '/bilder/grupper/drake.jpg',
+    heroAlt: 'Drakebåter med fargerike spinnakere under regatta',
     name: 'Drake',
     shortDescription:
       'For seilere i alle aldre som vil seile den klassiske Drake-båten – regatta om sommeren, klubbkvelder om vinteren.',

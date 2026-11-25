@@ -39,6 +39,9 @@ export default function GroupPage() {
         eyebrow="Om oss · Gruppe"
         title={group.name}
         description={group.shortDescription}
+        heroImage={group.heroImage}
+        heroAlt={group.heroAlt}
+        heroProminent
       />
 
       <section className="section-py bg-white">
@@ -91,7 +94,15 @@ export default function GroupPage() {
                     </p>
                   </div>
                 )}
-                <p className="mt-3 text-slate-600 leading-relaxed">{group.sportsboatText}</p>
+                {group.sportsboatImage && (
+                  <img
+                    src={group.sportsboatImage}
+                    alt={group.sportsboatImageAlt ?? ''}
+                    className="mt-4 w-full aspect-[3/2] object-cover rounded-2xl shadow-sm"
+                    loading="lazy"
+                  />
+                )}
+                <p className="mt-4 text-slate-600 leading-relaxed">{group.sportsboatText}</p>
               </div>
             )}
 
