@@ -69,7 +69,13 @@ export default function GroupPage() {
               <div className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
                 <CalendarDays className="h-5 w-5 text-[#0C1C8C]" />
                 <h3 className="mt-3 text-sm font-600 text-slate-900">Når og hvor</h3>
-                <p className="mt-1 text-sm text-slate-600">{group.schedule}</p>
+                <p className="mt-1 text-sm text-slate-600 whitespace-pre-line">{group.schedule}</p>
+                {group.location && (
+                  <p className="mt-2 flex items-start gap-1.5 text-sm text-slate-600">
+                    <MapPin className="h-4 w-4 shrink-0 mt-0.5 text-[#0C1C8C]" />
+                    {group.location}
+                  </p>
+                )}
               </div>
             </div>
 

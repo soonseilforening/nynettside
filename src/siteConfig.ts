@@ -79,16 +79,18 @@ export const groups: GroupInfo[] = [
   {
     slug: 'jolle',
     name: 'Jolle',
-    shortDescription: '[EKSEMPEL – må fylles inn] Kort beskrivelse av jollegruppen.',
+    shortDescription:
+      'Seiling for barn og ungdom fra 7 til 16 år i Optimist og ILCA – fra første tur i båten til regatta.',
     description:
-      '[EKSEMPEL – må fylles inn] Beskrivelse av jollegruppen, hva man driver med, hvilke båttyper som brukes og nivå på seilerne.',
-    targetGroup: '[EKSEMPEL – må fylles inn] Hvem gruppen passer for (alder, nivå).',
-    schedule: '[EKSEMPEL – må fylles inn] Når gruppen møtes (ukedag, tidspunkt, sesong).',
-    location: '[EKSEMPEL – må fylles inn] Hvor gruppen møtes (klubbhus, brygge, område).',
-    contactName: '[EKSEMPEL – må fylles inn] Navn på kontaktperson',
-    contactEmail: '[EKSEMPEL – må fylles inn] E-postadresse',
+      'Jollegruppen er for barn og ungdom som vil lære å seile, eller bli enda bedre. Vi har fire treningsgrupper: Optimist nybegynner, Optimist viderekommende, ILCA nybegynner/rekrutt og ILCA viderekommende. Om sommeren trener vi på sjøen, og om vinteren holder vi formen ved like med svømmetrening, slik at alle er trygge i vannet.',
+    targetGroup:
+      'Barn og ungdom fra 7 til 16 år. Du trenger ingen erfaring for å begynne – nybegynnere er hjertelig velkomne.',
+    schedule:
+      'Seiltrening: mandag og onsdag kl. 17:30–20:00, april–oktober.\nSvømmetrening: torsdag kl. 16:30–18:00, oktober–april.',
+    location: 'Seiltrening ved Seilforeningens brygge. Svømmetrening i Grevlingen svømmehall.',
+    contactName: 'Ola Sillerud',
+    contactEmail: 'jolle@soonsf.no',
     rubicGroupIds: ['jolle'],
-    example: true,
   },
   {
     slug: 'kjolbat-sport',
@@ -101,44 +103,45 @@ export const groups: GroupInfo[] = [
       'Har du som voksen lyst til å lære deg å seile, er det alltid plass som mannskap under onsdagsregattaen.',
     schedule:
       'Møt opp på brygga til seilforeningen en onsdag klokken 17:30, så får du plass om bord i en av båtene og en praktisk innføring i seiling.',
-    location: 'Brygga til Soon Seilforening, Son',
+    location: 'Seilforeningens brygge',
     contactName: 'Mads Francke',
     contactEmail: 'kjolbaat@soonsf.no',
     contacts: [
       { role: 'Leder, kjølbåt', name: 'Mads Francke', email: 'kjolbaat@soonsf.no' },
-      { role: 'Styremedlem, sportsbåt', name: 'Jonas Alexander Sørlie', email: 'sport@soonsf.no' },
+      { role: 'Leder, sportsbåt', name: 'Jonas Sørlie', email: 'sport@soonsf.no' },
     ],
     rubicGroupIds: ['kjolbat', 'sportsbat'],
-    sportsboatText: '[EKSEMPEL – må fylles inn av gruppeleder for sportsbåt]',
-    sportsboatExample: true,
+    sportsboatText:
+      'Sportsbåtgruppen er for seilere i alle aldre som trener i J70 for å delta i regattaer. Gruppen passer for alle fra 16 år og oppover som har lyst til å konkurrere. Vi trener mandag og onsdag kl. 17:30–20:00 fra Seilforeningens brygge.',
   },
   {
     slug: 'ladies-sailing',
     name: 'Ladies Sailing',
-    shortDescription: '[EKSEMPEL – må fylles inn] Kort beskrivelse av Ladies Sailing.',
+    shortDescription:
+      'Seiling for damer i alle aldre og på alle nivåer – på sjøen om sommeren, teori og hygge om vinteren.',
     description:
-      '[EKSEMPEL – må fylles inn] Beskrivelse av Ladies Sailing, hvor damer i alle aldre kommer sammen for å lære praktisk seiling og teori.',
-    targetGroup: '[EKSEMPEL – må fylles inn] Damer i alle aldre.',
-    schedule: '[EKSEMPEL – må fylles inn] Når gruppen møtes (ukedag, tidspunkt, sesong).',
-    location: '[EKSEMPEL – må fylles inn] Hvor gruppen møtes (klubbhus, brygge, område).',
-    contactName: '[EKSEMPEL – må fylles inn] Navn på kontaktperson',
+      'I Ladies Sailing seiler vi SonaR og J70 og trener for å bli trygge og gode seilere. Utenfor sesongen lærer vi mer seilteori og har det hyggelig sammen. Her er det plass både for deg som aldri har seilt og for deg som vil bli bedre.',
+    targetGroup: 'Damer i alle aldre og på alle nivåer. Du må være medlem av Soon Seilforening for å delta.',
+    schedule: 'Tirsdager kl. 17:30–20:30 i sommerhalvåret.',
+    location: 'Seilforeningens brygge',
+    contactName: 'Janne Frich Aschjem',
+    contactEmail: 'ladies@soonsf.no',
     rubicGroupIds: ['ladies'],
-    contactEmail: '[EKSEMPEL – må fylles inn] E-postadresse',
-    example: true,
   },
   {
     slug: 'drake',
     name: 'Drake',
-    shortDescription: '[EKSEMPEL – må fylles inn] Kort beskrivelse av Drake-gruppen.',
+    shortDescription:
+      'For seilere i alle aldre som vil seile den klassiske Drake-båten – regatta om sommeren, klubbkvelder om vinteren.',
     description:
-      '[EKSEMPEL – må fylles inn] Beskrivelse av Drake-gruppen, hva man driver med, hvilke båttyper som brukes og nivå på seilerne.',
-    targetGroup: '[EKSEMPEL – må fylles inn] Hvem gruppen passer for (alder, nivå).',
-    schedule: '[EKSEMPEL – må fylles inn] Når gruppen møtes (ukedag, tidspunkt, sesong).',
-    location: '[EKSEMPEL – må fylles inn] Hvor gruppen møtes (klubbhus, brygge, område).',
-    contactName: '[EKSEMPEL – må fylles inn] Navn på kontaktperson',
+      'Drake-gruppen er den gruppen i foreningen som har vokst raskest de to siste årene. I sommerhalvåret trener vi og seiler regattaer. Om vinteren har vi klubbkvelder med vedlikehold av båtene og sosialt samvær i vårt flotte lokale, der båtene står oppstilt.',
+    targetGroup: 'Alle som er interessert i å seile Drake og ha det moro på regattabanen.',
+    schedule:
+      'Trening og regattaer i sommerhalvåret, klubbkvelder med vedlikehold om vinteren. Tidspunkter for neste sesong kommer.',
+    location: 'Seilforeningen i Son',
+    contactName: 'Lars Even Nilssen',
+    contactEmail: 'drake@soonsf.no',
     rubicGroupIds: [],
-    contactEmail: '[EKSEMPEL – må fylles inn] E-postadresse',
-    example: true,
   },
 ];
 
