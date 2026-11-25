@@ -73,6 +73,7 @@ export type GroupInfo = {
   sportsboatExample?: boolean;
   heroImage?: string;
   heroAlt?: string;
+  heroPosition?: string;
   sportsboatImage?: string;
   sportsboatImageAlt?: string;
   rubicGroupIds?: string[];
@@ -83,6 +84,7 @@ export const groups: GroupInfo[] = [
   {
     slug: 'jolle',
     heroImage: '/bilder/grupper/jolle.jpg',
+    heroPosition: '68% 72%',
     heroAlt: 'Optimistjoller på rekke under trening, med hvite seil og seilnumre',
     name: 'Jolle',
     shortDescription:
@@ -101,6 +103,7 @@ export const groups: GroupInfo[] = [
   {
     slug: 'kjolbat-sport',
     heroImage: '/bilder/grupper/kjolbat.jpg',
+    heroPosition: '60% 65%',
     heroAlt: 'Kjølbåt i krengning med mannskap i seilerdress under mørke skyer',
     sportsboatImage: '/bilder/grupper/sportsbat.jpg',
     sportsboatImageAlt: 'J70-båter med gennaker rundt merket under regatta',
@@ -127,6 +130,7 @@ export const groups: GroupInfo[] = [
   {
     slug: 'ladies-sailing',
     heroImage: '/bilder/grupper/ladies-sailing.jpg',
+    heroPosition: '75% 88%',
     heroAlt: 'To J70-båter med Ladies Sailing-mannskap på fjorden',
     name: 'Ladies Sailing',
     shortDescription:
@@ -143,6 +147,7 @@ export const groups: GroupInfo[] = [
   {
     slug: 'drake',
     heroImage: '/bilder/grupper/drake.jpg',
+    heroPosition: '50% 80%',
     heroAlt: 'Drakebåter med fargerike spinnakere under regatta',
     name: 'Drake',
     shortDescription:

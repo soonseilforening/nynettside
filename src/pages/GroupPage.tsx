@@ -41,6 +41,7 @@ export default function GroupPage() {
         description={group.shortDescription}
         heroImage={group.heroImage}
         heroAlt={group.heroAlt}
+        heroPosition={group.heroPosition}
         heroProminent
       />
 
