@@ -147,7 +147,7 @@ export const groups: GroupInfo[] = [
   {
     slug: 'drake',
     heroImage: '/bilder/grupper/drake.jpg',
-    heroPosition: '50% 80%',
+    heroPosition: '50% 0%',
     heroAlt: 'Drakebåter med fargerike spinnakere under regatta',
     name: 'Drake',
     shortDescription:

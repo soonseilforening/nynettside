@@ -15,7 +15,7 @@ export default function PageHeader({ eyebrow, title, description, heroImage, her
     <header
       className={`relative overflow-hidden ${
         heroImage && heroProminent
-          ? 'flex flex-col justify-end min-h-[70vh] sm:min-h-[65vh] lg:min-h-[72vh] pt-32 pb-12 sm:pb-16'
+          ? 'flex flex-col justify-start min-h-[70vh] sm:min-h-[65vh] lg:min-h-[72vh] pt-28 sm:pt-32 lg:pt-36 pb-12'
           : 'pt-32 pb-12 sm:pt-36 sm:pb-16'
       }`}
       style={{ backgroundColor: '#0C1C8C' }}
@@ -32,7 +32,7 @@ export default function PageHeader({ eyebrow, title, description, heroImage, her
           <div
             className={`absolute inset-0 ${
               heroProminent
-                ? 'bg-gradient-to-t from-[#0C1C8C]/90 via-[#0C1C8C]/25 to-transparent sm:bg-gradient-to-tr sm:from-[#0C1C8C]/85 sm:via-[#0C1C8C]/20 sm:to-transparent'
+                ? 'bg-gradient-to-b from-[#0C1C8C]/90 via-[#0C1C8C]/35 to-transparent sm:via-[#0C1C8C]/25'
                 : 'bg-gradient-to-r from-[#0C1C8C]/90 to-[#0C1C8C]/60'
             }`}
           />
@@ -42,11 +42,11 @@ export default function PageHeader({ eyebrow, title, description, heroImage, her
         <span className="inline-flex items-center gap-2 text-sm font-600 uppercase tracking-[0.16em] text-white/70">
           {eyebrow}
         </span>
-        <h1 className="mt-3 font-display text-3xl sm:text-4xl lg:text-5xl font-700 text-white tracking-tight">
+        <h1 className="mt-3 font-display text-3xl sm:text-4xl lg:text-5xl font-700 text-white tracking-tight [text-shadow:0_2px_12px_rgba(0,0,0,0.35)]">
           {title}
         </h1>
         {description && (
-          <p className="mt-4 text-lg text-white/80 max-w-2xl leading-relaxed">
+          <p className="mt-4 text-lg text-white/90 max-w-2xl leading-relaxed [text-shadow:0_1px_8px_rgba(0,0,0,0.35)]">
             {description}
           </p>
         )}
