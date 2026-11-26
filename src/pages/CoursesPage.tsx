@@ -1,6 +1,7 @@
-import { GraduationCap, Clock, Users, Tag, ArrowUpRight, AlertCircle } from 'lucide-react';
+import { GraduationCap, Clock, Users, Tag, ArrowUpRight, AlertCircle, Receipt } from 'lucide-react';
 import PageHeader from '@/components/PageHeader';
-import { courses, externalLinks, siteConfig } from '@/siteConfig';
+import { Link } from 'react-router-dom';
+import { courses, externalLinks, siteConfig, trainingFeeInfo } from '@/siteConfig';
 
 export default function CoursesPage() {
   return (
@@ -70,6 +71,35 @@ export default function CoursesPage() {
                 </div>
               </article>
             ))}
+          </div>
+
+          {/* Treningsavgift */}
+          <div id="treningsavgift" className="mt-10 rounded-2xl border border-slate-200 bg-white p-6 sm:p-8 shadow-sm scroll-mt-28">
+            <div className="flex items-center gap-3">
+              <span className="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-[#0C1C8C] text-white">
+                <Receipt className="h-5 w-5" />
+              </span>
+              <h2 className="font-display text-xl font-700 text-slate-900">{trainingFeeInfo.title}</h2>
+            </div>
+            <div className="mt-4 space-y-3 text-sm text-slate-600 leading-relaxed max-w-3xl">
+              {trainingFeeInfo.paragraphs.map((p) => (
+                <p key={p}>{p}</p>
+              ))}
+              {trainingFeeInfo.items && trainingFeeInfo.items.length > 0 && (
+                <ul className="list-disc pl-5 space-y-1">
+                  {trainingFeeInfo.items.map((i) => (
+                    <li key={i}>{i}</li>
+                  ))}
+                </ul>
+              )}
+              <p>
+                Se også{' '}
+                <Link to="/medlemskap" className="font-600 text-[#0C1C8C] hover:underline">
+                  medlemskap og kontingent
+                </Link>
+                .
+              </p>
+            </div>
           </div>
 
           <div className="mt-10 rounded-2xl bg-slate-50 border border-slate-200 p-6 sm:p-8 text-center">

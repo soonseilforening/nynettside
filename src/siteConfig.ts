@@ -48,6 +48,7 @@ export const navLinks: NavLink[] = [
       { label: 'Kjølbåt-Sport', path: '/om-oss/kjolbat-sport' },
       { label: 'Ladies Sailing', path: '/om-oss/ladies-sailing' },
       { label: 'Drake', path: '/om-oss/drake' },
+      { label: 'Årsmøtedokumenter', path: '/om-oss/arsmotedokumenter' },
     ],
   },
 ];
@@ -546,3 +547,60 @@ export const membershipContent = {
   exitText:
     'Utmelding må skje skriftlig på e-post til kontoret@soonsf.no. Utmelding kan også skje direkte gjennom MinSide i Rubic.',
 };
+
+// Treningsavgift – hentet fra dagens side soonseilforening.no/treningsavgift-1 (26.11.2026).
+// Oppdateres hver sesong. Legg gjerne inn beløp per gruppe i `items` når de er klare.
+export const trainingFeeInfo: { title: string; paragraphs: string[]; items?: string[] } = {
+  title: 'Treningsavgift 2026',
+  paragraphs: [
+    'Treningsavgiften for høstsesongen blir denne gangen fakturert, og ikke betalt ved påmelding som i vår.',
+    'Gruppelederne oppdaterer medlemslistene for sine grupper i Rubic. Fakturaene sendes på e-post ut fra disse listene, og utsendelsen er i gang.',
+    'Treningsavgiften kommer i tillegg til medlemskontingenten. Spørsmål om faktura kan sendes til kontoret@soonsf.no.',
+  ],
+};
+
+// Årsmøtedokumenter – vises på /om-oss/arsmotedokumenter. Nyeste årsmøte øverst.
+// Slik legger du til et nytt år: kopier en blokk, endre år, dato og dokumenter.
+// PDF-ene legges i public/dokumenter/arsmote/ og lenkes som '/dokumenter/arsmote/<filnavn>.pdf'.
+// NB: Lenkene til wixstatic/soonseilforening.no/_files slutter å virke når domenet flyttes fra Wix.
+// Se docs/lansering.md.
+export type MeetingDocument = { label: string; url: string };
+export type AnnualMeeting = { year: number; date: string; documents: MeetingDocument[] };
+
+export const annualMeetingsIntro =
+  'Her finner du dokumentene til årsmøtene i Soon Seilforening. Sakspapirene legges ut i forkant av hvert årsmøte, og referatet legges ut etterpå.';
+
+export const annualMeetings: AnnualMeeting[] = [
+  {
+    year: 2025,
+    date: '10. februar 2025',
+    documents: [
+      { label: 'Årsmelding 2024', url: 'https://www.soonseilforening.no/_files/ugd/5f0a4c_3a899df5a2c3474aa2f1d03eab67d612.pdf' },
+      { label: 'Referat årsmøte 2025', url: 'https://www.soonseilforening.no/_files/ugd/5f0a4c_4f50391b79c048f1967387eac7c68d47.pdf' },
+    ],
+  },
+  {
+    year: 2024,
+    date: '15. februar 2024',
+    documents: [
+      { label: 'Årsmelding 2023', url: 'https://www.soonseilforening.no/_files/ugd/5f0a4c_8cec170f30ab4ae1ad5cd1a3ddaa8cef.pdf' },
+      { label: 'Referat årsmøte 2024', url: 'https://www.soonseilforening.no/_files/ugd/5f0a4c_ccea081d81a041dab8c4f8dfc4147919.pdf' },
+    ],
+  },
+  {
+    year: 2023,
+    date: '2. mars 2023',
+    documents: [
+      { label: 'Årsmelding 2022', url: 'https://www.soonseilforening.no/_files/ugd/5f0a4c_be256b525fc9430fb1947f54c75ef8e3.pdf' },
+      { label: 'Referat årsmøte 2023', url: 'https://www.soonseilforening.no/_files/ugd/5f0a4c_7486af4b2a4f4c8f9a35ae4dfd9e3397.pdf' },
+    ],
+  },
+  {
+    year: 2022,
+    date: '17. mars 2022',
+    documents: [
+      { label: 'Årsmelding 2021', url: 'https://www.soonseilforening.no/_files/ugd/5f0a4c_5a5752c0fdd746ae8b7adc551d6ff236.pdf' },
+      { label: 'Referat årsmøte 2022', url: 'https://www.soonseilforening.no/_files/ugd/5f0a4c_9abe68111b084a138d4b06b87eb0e562.pdf' },
+    ],
+  },
+];
