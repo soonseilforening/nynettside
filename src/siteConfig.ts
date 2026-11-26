@@ -84,7 +84,7 @@ export const groups: GroupInfo[] = [
   {
     slug: 'jolle',
     heroImage: '/bilder/grupper/jolle.jpg',
-    heroPosition: '70% 80%',
+    heroPosition: '70% 100%',
     heroAlt: 'Optimistjoller på rekke under trening, med hvite seil og seilnumre',
     name: 'Jolle',
     shortDescription:
@@ -103,8 +103,8 @@ export const groups: GroupInfo[] = [
   {
     slug: 'kjolbat-sport',
     heroImage: '/bilder/grupper/kjolbat.jpg',
-    heroPosition: '80% 65%',
-    heroAlt: 'Kjølbåt med mørkt seil på kryss i solskinn, med kongeskipet i bakgrunnen',
+    heroPosition: '70% 40%',
+    heroAlt: 'Kjølbåt i krengning med mannskap i seilerdress i frisk vind',
     sportsboatImage: '/bilder/grupper/sportsbat.jpg',
     sportsboatImageAlt: 'J70-båter med gennaker rundt merket under regatta',
     name: 'Kjølbåt-Sport',
@@ -130,7 +130,7 @@ export const groups: GroupInfo[] = [
   {
     slug: 'ladies-sailing',
     heroImage: '/bilder/grupper/ladies-sailing.jpg',
-    heroPosition: '85% 85%',
+    heroPosition: '85% 40%',
     heroAlt: 'J70 med Ladies Sailing-mannskap på kryss i frisk bris',
     name: 'Ladies Sailing',
     shortDescription:

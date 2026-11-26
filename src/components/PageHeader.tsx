@@ -3,7 +3,7 @@ type PageHeaderProps = {
   title: string;
   description?: string;
   heroImage?: string;
-  /** Vis bildet tydelig (bærende bilde), ikke bare som svak bakgrunn */
+  /** Vis bildet tydelig (bærende bilde): tittelen står nede til venstre, med overtoning bare i det hjørnet */
   heroProminent?: boolean;
   heroAlt?: string;
   /** Hvor i bildet motivet er (CSS object-position), f.eks. 'center 80%' = nederst på midten */
@@ -15,7 +15,7 @@ export default function PageHeader({ eyebrow, title, description, heroImage, her
     <header
       className={`relative overflow-hidden ${
         heroImage && heroProminent
-          ? 'flex flex-col justify-start min-h-[70vh] sm:min-h-[65vh] lg:min-h-[72vh] pt-28 sm:pt-32 lg:pt-36 pb-12'
+          ? 'flex flex-col justify-end min-h-[62vh] sm:min-h-[56vh] lg:min-h-[64vh] pt-28 sm:pt-32 pb-8 sm:pb-10 lg:pb-12'
           : 'pt-32 pb-12 sm:pt-36 sm:pb-16'
       }`}
       style={{ backgroundColor: '#0C1C8C' }}
@@ -32,7 +32,7 @@ export default function PageHeader({ eyebrow, title, description, heroImage, her
           <div
             className={`absolute inset-0 ${
               heroProminent
-                ? 'bg-gradient-to-b from-[#0C1C8C]/90 via-[#0C1C8C]/35 to-transparent sm:via-[#0C1C8C]/25'
+                ? 'bg-gradient-to-t from-[#0C1C8C]/85 via-[#0C1C8C]/30 via-35% to-transparent to-60% sm:bg-gradient-to-tr sm:from-[#0C1C8C]/80 sm:via-[#0C1C8C]/25 sm:via-30% sm:to-transparent sm:to-55%'
                 : 'bg-gradient-to-r from-[#0C1C8C]/90 to-[#0C1C8C]/60'
             }`}
           />

@@ -45,7 +45,8 @@ export default function GroupPage() {
         heroProminent
       />
 
-      <section className="section-py bg-white">
+      {/* Kortere luft over «Om gruppen», så tittelen nederst i bildet og teksten henger sammen */}
+      <section className="pt-10 sm:pt-12 lg:pt-14 pb-16 sm:pb-20 lg:pb-28 bg-white">
         <div className="container-px mx-auto max-w-3xl">
           {group.example && (
             <div className="mb-6 flex items-start gap-2.5 rounded-xl bg-amber-50 border border-amber-200 px-4 py-3">
