@@ -84,7 +84,7 @@ export const groups: GroupInfo[] = [
   {
     slug: 'jolle',
     heroImage: '/bilder/grupper/jolle.jpg',
-    heroPosition: '68% 72%',
+    heroPosition: '70% 80%',
     heroAlt: 'Optimistjoller på rekke under trening, med hvite seil og seilnumre',
     name: 'Jolle',
     shortDescription:
@@ -103,8 +103,8 @@ export const groups: GroupInfo[] = [
   {
     slug: 'kjolbat-sport',
     heroImage: '/bilder/grupper/kjolbat.jpg',
-    heroPosition: '60% 65%',
-    heroAlt: 'Kjølbåt i krengning med mannskap i seilerdress under mørke skyer',
+    heroPosition: '80% 65%',
+    heroAlt: 'Kjølbåt med mørkt seil på kryss i solskinn, med kongeskipet i bakgrunnen',
     sportsboatImage: '/bilder/grupper/sportsbat.jpg',
     sportsboatImageAlt: 'J70-båter med gennaker rundt merket under regatta',
     name: 'Kjølbåt-Sport',
@@ -130,8 +130,8 @@ export const groups: GroupInfo[] = [
   {
     slug: 'ladies-sailing',
     heroImage: '/bilder/grupper/ladies-sailing.jpg',
-    heroPosition: '75% 88%',
-    heroAlt: 'To J70-båter med Ladies Sailing-mannskap på fjorden',
+    heroPosition: '85% 85%',
+    heroAlt: 'J70 med Ladies Sailing-mannskap på kryss i frisk bris',
     name: 'Ladies Sailing',
     shortDescription:
       'Seiling for damer i alle aldre og på alle nivåer – på sjøen om sommeren, teori og hygge om vinteren.',
@@ -147,8 +147,8 @@ export const groups: GroupInfo[] = [
   {
     slug: 'drake',
     heroImage: '/bilder/grupper/drake.jpg',
-    heroPosition: '50% 0%',
-    heroAlt: 'Drakebåter med fargerike spinnakere under regatta',
+    heroPosition: '30% 100%',
+    heroAlt: 'Drakebåter med fargerike spinnakere under regatta, med bratt skogkledd berg bak',
     name: 'Drake',
     shortDescription:
       'For seilere i alle aldre som vil seile den klassiske Drake-båten – regatta om sommeren, klubbkvelder om vinteren.',
