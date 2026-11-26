@@ -85,13 +85,6 @@ export default function CoursesPage() {
               {trainingFeeInfo.paragraphs.map((p) => (
                 <p key={p}>{p}</p>
               ))}
-              {trainingFeeInfo.items && trainingFeeInfo.items.length > 0 && (
-                <ul className="list-disc pl-5 space-y-1">
-                  {trainingFeeInfo.items.map((i) => (
-                    <li key={i}>{i}</li>
-                  ))}
-                </ul>
-              )}
               <p>
                 Se også{' '}
                 <Link to="/medlemskap" className="font-600 text-[#0C1C8C] hover:underline">
@@ -99,6 +92,26 @@ export default function CoursesPage() {
                 </Link>
                 .
               </p>
+            </div>
+
+            <div className="mt-6 max-w-3xl overflow-hidden rounded-xl border border-slate-200">
+              <table className="w-full text-sm">
+                {trainingFeeInfo.groups.map((g) => (
+                  <tbody key={g.name}>
+                    <tr className="bg-[#0C1C8C]">
+                      <th colSpan={2} scope="colgroup" className="px-4 py-2.5 text-left text-xs font-700 uppercase tracking-wider text-white">
+                        {g.name}
+                      </th>
+                    </tr>
+                    {g.rows.map((r) => (
+                      <tr key={r.label} className="border-t border-slate-100">
+                        <td className="px-4 py-3 text-slate-700">{r.label}</td>
+                        <td className="px-4 py-3 text-right font-700 text-slate-900 whitespace-nowrap">{r.price}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                ))}
+              </table>
             </div>
           </div>
 

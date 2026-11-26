@@ -549,13 +549,38 @@ export const membershipContent = {
 };
 
 // Treningsavgift – hentet fra dagens side soonseilforening.no/treningsavgift-1 (26.11.2026).
-// Oppdateres hver sesong. Legg gjerne inn beløp per gruppe i `items` når de er klare.
-export const trainingFeeInfo: { title: string; paragraphs: string[]; items?: string[] } = {
+// Oppdateres hver sesong: endre tittel, tekst og priser under.
+export type FeeRow = { label: string; price: string };
+export type FeeGroup = { name: string; rows: FeeRow[] };
+
+export const trainingFeeInfo: { title: string; paragraphs: string[]; groups: FeeGroup[] } = {
   title: 'Treningsavgift 2026',
   paragraphs: [
     'Treningsavgiften for høstsesongen blir denne gangen fakturert, og ikke betalt ved påmelding som i vår.',
     'Gruppelederne oppdaterer medlemslistene for sine grupper i Rubic. Fakturaene sendes på e-post ut fra disse listene, og utsendelsen er i gang.',
     'Treningsavgiften kommer i tillegg til medlemskontingenten. Spørsmål om faktura kan sendes til kontoret@soonsf.no.',
+  ],
+  groups: [
+    {
+      name: 'Jolle',
+      rows: [
+        { label: 'Nybegynner høst 2026/vår 2027 inkl. båtleie', price: 'kr 2 000' },
+        { label: 'Viderekommende høst 2026 inkl. båtleie', price: 'kr 1 350' },
+        { label: 'Viderekommende høst 2026 ekskl. båtleie', price: 'kr 600' },
+      ],
+    },
+    {
+      name: 'Sportsbåt',
+      rows: [
+        { label: 'J70 ungdom høst 2026', price: 'kr 600' },
+        { label: 'J70 voksen høst 2026', price: 'kr 1 700' },
+        { label: 'Trening J70 + tirsdagstrening Ladies', price: 'kr 2 300' },
+      ],
+    },
+    {
+      name: 'Ladies',
+      rows: [{ label: 'Tirsdagstrening høst 2026', price: 'kr 1 700' }],
+    },
   ],
 };
 
