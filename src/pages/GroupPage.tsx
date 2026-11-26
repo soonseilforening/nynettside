@@ -39,9 +39,14 @@ export default function GroupPage() {
         eyebrow="Om oss · Gruppe"
         title={group.name}
         description={group.shortDescription}
+        heroImage={group.heroImage}
+        heroAlt={group.heroAlt}
+        heroPosition={group.heroPosition}
+        heroProminent
       />
 
-      <section className="section-py bg-white">
+      {/* Kortere luft over «Om gruppen», så tittelen nederst i bildet og teksten henger sammen */}
+      <section className="pt-10 sm:pt-12 lg:pt-14 pb-16 sm:pb-20 lg:pb-28 bg-white">
         <div className="container-px mx-auto max-w-3xl">
           {group.example && (
             <div className="mb-6 flex items-start gap-2.5 rounded-xl bg-amber-50 border border-amber-200 px-4 py-3">
@@ -69,7 +74,13 @@ export default function GroupPage() {
               <div className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
                 <CalendarDays className="h-5 w-5 text-[#0C1C8C]" />
                 <h3 className="mt-3 text-sm font-600 text-slate-900">Når og hvor</h3>
-                <p className="mt-1 text-sm text-slate-600">{group.schedule}</p>
+                <p className="mt-1 text-sm text-slate-600 whitespace-pre-line">{group.schedule}</p>
+                {group.location && (
+                  <p className="mt-2 flex items-start gap-1.5 text-sm text-slate-600">
+                    <MapPin className="h-4 w-4 shrink-0 mt-0.5 text-[#0C1C8C]" />
+                    {group.location}
+                  </p>
+                )}
               </div>
             </div>
 
@@ -85,7 +96,15 @@ export default function GroupPage() {
                     </p>
                   </div>
                 )}
-                <p className="mt-3 text-slate-600 leading-relaxed">{group.sportsboatText}</p>
+                {group.sportsboatImage && (
+                  <img
+                    src={group.sportsboatImage}
+                    alt={group.sportsboatImageAlt ?? ''}
+                    className="mt-4 w-full aspect-[3/2] object-cover rounded-2xl shadow-sm"
+                    loading="lazy"
+                  />
+                )}
+                <p className="mt-4 text-slate-600 leading-relaxed">{group.sportsboatText}</p>
               </div>
             )}
 

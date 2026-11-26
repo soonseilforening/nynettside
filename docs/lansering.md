@@ -19,6 +19,14 @@ Ting som må gjøres når den nye nettsiden skal erstatte Wix-siden på soonseil
 - Ingen sider skal ha «[EKSEMPEL – må fylles inn]».
 - Videresend gamle Wix-adresser i `public/_redirects` (f.eks. `/post/*` → `/nyheter`, `/kontakt` → `/om-oss/styret`, `/brygge-gjestehavn` → `/gjestebrygge`, `/bli-medlem` → `/medlemskap`). Reglene må stå **over** linjen `/*  /index.html  200`.
 
+## E-post (Google Workspace)
+
+Nettsiden lanseres samtidig som foreningen går over til Google Workspace, planlagt rundt årsskiftet 2026/2027.
+
+- Alle funksjonsadresser som står på nettsiden, må virke i Google Workspace før lansering: kontoret@, leder@, nestleder@, brygge@, bygning@, materiell@, sport@, kjolbaat@, ladies@, okonomi@, styremedlem1@, jolle@ og drake@soonsf.no. `jolle@` og `drake@` er nye.
+- MX-pekeren for soonsf.no flyttes fra Office 365 til Google. Dette avtales på forhånd, fordi det påvirker all e-post til foreningen.
+- I Apps Script (`apps-script/neptun-foresporsel.gs`): bytt `ADMIN_EPOST` fra kontoret@soonseilforening.no til kontoret@soonsf.no når den virker i Google.
+
 ## Teknisk
 
 - Miljøvariablene `VITE_SANITY_PROJECT_ID` og `VITE_SANITY_DATASET` er lagt inn i Netlify (gjort 24.11.2026).
