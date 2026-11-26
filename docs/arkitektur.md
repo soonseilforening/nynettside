@@ -84,7 +84,7 @@ Hver side har sin egen adresse (React Router). Filen `public/_redirects` sørger
 |---|---|---|
 | Hjem | `/` | Velkomst, vær (lenker til Windy og Yr), kommende aktiviteter og siste nyheter |
 | Aktiviteter | `/aktiviteter` | Seilas, trening, dugnad og regattaer |
-| – Seilkurs | `/aktiviteter/seilkurs` | Kurs for barn og voksne, sommer-seilskole |
+| – Seilkurs | `/aktiviteter/seilkurs` | Kurs for barn og voksne, sommer-seilskole, og treningsavgift (`trainingFeeInfo` i `src/siteConfig.ts`) |
 | Utleielokale | `/utleielokale` | Lokalet Neptun: tekst, priser og bilder fra `content/tekster/utleielokale.md`. Bookingskjemaet kommer senere |
 | Gjestebrygge | `/gjestebrygge` | For gjester og faste bryggeplasser (`content/tekster/gjestebrygge.md`) |
 | Medlemskap | `/medlemskap` | Kontingent, innmelding og utmelding (tekst fra `content/tekster/medlemskap.md`) |
@@ -95,6 +95,7 @@ Hver side har sin egen adresse (React Router). Filen `public/_redirects` sørger
 | – Kjølbåt-Sport | `/om-oss/kjolbat-sport` | Gruppeside |
 | – Ladies Sailing | `/om-oss/ladies-sailing` | Gruppeside (navnet skal avklares med gruppeleder) |
 | – Drake | `/om-oss/drake` | Gruppeside |
+| – Årsmøtedokumenter | `/om-oss/arsmotedokumenter` | Årsmelding og referat per årsmøte, nyeste øverst (`annualMeetings` i `src/siteConfig.ts`) |
 
 Sider merket med «–» er undersider og vises som underpunkter i menyen. Adressene bruker bare ASCII-tegn (`kjolbat`, ikke `kjølbåt`).
 

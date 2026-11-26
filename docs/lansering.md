@@ -27,6 +27,10 @@ Nettsiden lanseres samtidig som foreningen går over til Google Workspace, planl
 - MX-pekeren for soonsf.no flyttes fra Office 365 til Google. Dette avtales på forhånd, fordi det påvirker all e-post til foreningen.
 - I Apps Script (`apps-script/neptun-foresporsel.gs`): bytt `ADMIN_EPOST` fra kontoret@soonseilforening.no til kontoret@soonsf.no når den virker i Google.
 
+## Dokumenter som ligger hos Wix
+
+- Årsmøtedokumentene (`annualMeetings` i `src/siteConfig.ts`) lenker i dag til PDF-er på soonseilforening.no/_files/... hos Wix. De slutter å virke når domenet flyttes. Før lansering: last ned PDF-ene, legg dem i `public/dokumenter/arsmote/` og bytt lenkene til `/dokumenter/arsmote/<filnavn>.pdf`.
+
 ## Teknisk
 
 - Miljøvariablene `VITE_SANITY_PROJECT_ID` og `VITE_SANITY_DATASET` er lagt inn i Netlify (gjort 24.11.2026).

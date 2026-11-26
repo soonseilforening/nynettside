@@ -12,6 +12,7 @@ import NewsArticlePage from '@/pages/NewsArticlePage';
 import AboutPage from '@/pages/AboutPage';
 import GroupPage from '@/pages/GroupPage';
 import BoardPage from '@/pages/BoardPage';
+import AnnualMeetingDocsPage from '@/pages/AnnualMeetingDocsPage';
 import UnderConstructionBanner from '@/components/UnderConstructionBanner';
 
 function App() {
@@ -31,6 +32,7 @@ function App() {
             <Route path="/nyheter/:slug" element={<NewsArticlePage />} />
             <Route path="/om-oss" element={<AboutPage />} />
             <Route path="/om-oss/styret" element={<BoardPage />} />
+            <Route path="/om-oss/arsmotedokumenter" element={<AnnualMeetingDocsPage />} />
             <Route path="/om-oss/:groupSlug" element={<GroupPage />} />
           </Routes>
         </main>
