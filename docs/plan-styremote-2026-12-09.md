@@ -4,11 +4,20 @@ Mål: Nettsiden presenteres for styret 9. desember, ferdig utfylt og uten «[EKS
 
 Status 24.11: Siden bygges på https://soonseilforening.netlify.app. Rubic-aktiviteter og nyheter fra Sanity virker. Det er 49 plassholdere igjen i `src/siteConfig.ts` og 1 i `content/tekster/`.
 
+Status 26.11: Gruppesidene har tekster og toppbilder (flettet inn i `main`). Det er 15 plassholdere igjen, og alle ligger på kurssiden (se under).
+
+## Plassholdere som gjenstår (26.11)
+| Hvor | Hva mangler | Hvem kan svare |
+|---|---|---|
+| Kurssiden (`courses` i `src/siteConfig.ts`), 3 kurs × 5 felt | Kurstittel, nivå, beskrivelse, varighet og pris | Kursansvarlig, eller gruppeleder Jolle (barnekurs og seilskole) og gruppeleder Kjølbåt (voksenkurs) |
+| Kurssiden (`src/pages/CoursesPage.tsx`) | Gul advarsel om eksempeltekst. Fjernes når kursene er fylt inn | Claude |
+| Kjølbåt-Sport, sportsbåt-delen | Gul advarsel vises hvis `sportsboatExample` settes. Ikke i bruk nå | – |
+
 ## Uke 48 (25.–29. november): Samle inn innhold
 | Oppgave | Hvem | Frist |
 |---|---|---|
 | Tekster til gruppesidene (Jolle, Sportsbåt, Ladies Sailing, Drake) skrives av nettsideansvarlig. Gruppelederne (alle i styret) får se dem på styremøtet | Ansvarlig + Claude | 25.11 ✅ |
-| Fjerne de faste arrangementene i koden (erstattet av Rubic) | Claude | 26.11 |
+| Fjerne de faste arrangementene i koden (erstattet av Rubic) | Claude | 26.11 ✅ |
 | Hente kursinformasjon (kurs, nivå, varighet, pris) fra dagens side eller kursansvarlig | Claude + ansvarlig | 27.11 |
 | Bestemme omfanget av utleie/booking til 9.12: forespørselsskjema | Ansvarlig | 24.11 ✅ |
 

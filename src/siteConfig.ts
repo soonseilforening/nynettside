@@ -188,55 +188,6 @@ export const boardMembers: BoardMember[] = [
   { role: 'Kontormedarbeider', name: 'Ketil Haugland', email: 'kontoret@soonsf.no', image: '/bilder/styret/kontormedarbeider.jpg' },
 ];
 
-export type SailingEvent = {
-  id: string;
-  title: string;
-  date: string;
-  time: string;
-  category: 'Seilas' | 'Trening' | 'Dugnad' | 'Regatta' | 'Sosialt';
-  description: string;
-  example?: boolean;
-};
-
-export const upcomingEvents: SailingEvent[] = [
-  {
-    id: 'tirsdagsseilas',
-    title: 'Tirsdagsseilas',
-    date: '[EKSEMPEL – må fylles inn]',
-    time: '[EKSEMPEL – må fylles inn]',
-    category: 'Seilas',
-    description: '[EKSEMPEL – må fylles inn] Beskrivelse av seilas.',
-    example: true,
-  },
-  {
-    id: 'jolletrening-optimist',
-    title: 'Jolletrening Optimist',
-    date: '[EKSEMPEL – må fylles inn]',
-    time: '[EKSEMPEL – må fylles inn]',
-    category: 'Trening',
-    description: '[EKSEMPEL – må fylles inn] Beskrivelse av trening.',
-    example: true,
-  },
-  {
-    id: 'dugnad-havna',
-    title: 'Dugnad i havna',
-    date: '[EKSEMPEL – må fylles inn]',
-    time: '[EKSEMPEL – må fylles inn]',
-    category: 'Dugnad',
-    description: '[EKSEMPEL – må fylles inn] Beskrivelse av dugnad.',
-    example: true,
-  },
-  {
-    id: 'hostregatta',
-    title: 'Høstregatta Son',
-    date: '[EKSEMPEL – må fylles inn]',
-    time: '[EKSEMPEL – må fylles inn]',
-    category: 'Regatta',
-    description: '[EKSEMPEL – må fylles inn] Beskrivelse av regatta.',
-    example: true,
-  },
-];
-
 export type QuickLink = {
   id: string;
   label: string;

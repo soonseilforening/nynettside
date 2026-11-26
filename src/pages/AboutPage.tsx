@@ -1,4 +1,4 @@
-import { MapPin, Mail, Users, Calendar, ClipboardList, FolderArchive, Trophy, Anchor, ArrowUpRight, AlertCircle } from 'lucide-react';
+import { MapPin, Mail, Users, Calendar, ClipboardList, FolderArchive, Trophy, Anchor, ArrowUpRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import PageHeader from '@/components/PageHeader';
 import { siteConfig, quickLinks, aboutText, groups } from '@/siteConfig';
@@ -56,13 +56,6 @@ export default function AboutPage() {
             <p className="mt-2 text-slate-600">
               Soon Seilforening er inndelt i ulike undergrupper. Les mer om hver gruppe nedenfor.
             </p>
-
-            <div className="mt-6 flex items-start gap-2.5 rounded-xl bg-amber-50 border border-amber-200 px-4 py-3">
-              <AlertCircle className="h-5 w-5 text-amber-600 shrink-0 mt-0.5" />
-              <p className="text-sm text-amber-800">
-                Beskrivelsene av gruppene er eksempeltekst og vil bli fylt inn når innhold er klart.
-              </p>
-            </div>
 
             <div className="mt-6 grid sm:grid-cols-2 gap-4">
               {groups.map((group) => (
